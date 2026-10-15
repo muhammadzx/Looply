@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage your Looply B2B quote requests and offers.">
+  <title>Quote Requests | Looply</title>
+  <link rel="icon" href="../images/FAVICON.png" type="image/png">
+  <link rel="stylesheet" href="../shared/companyLayout.css">
+  <link rel="stylesheet" href="quote-requests.css">
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+<body>
+  <div class="page-shell">
+    <div id="company-sidebar-slot"></div>
+    <main class="main-content">
+      <div id="company-header-slot"></div>
+      <div class="content-container quotes-page">
+        <div class="quotes-heading">
+          <div><span class="quotes-eyebrow">COMPANY WORKSPACE</span><h1>Quote Requests</h1><p>Review inquiries, send quotations, and move business forward.</p></div>
+          <button class="quotes-btn quotes-btn-primary" id="new-request-btn" type="button">+ Request a Quote</button>
+        </div>
+        <div class="quotes-stats" aria-label="Quote request statistics">
+          <article class="quotes-stat"><span>Received</span><strong id="stat-received">0</strong><small>From potential buyers</small></article>
+          <article class="quotes-stat"><span>Sent</span><strong id="stat-sent">0</strong><small>To suppliers</small></article>
+          <article class="quotes-stat"><span>Awaiting Response</span><strong id="stat-pending">0</strong><small>Needs attention</small></article>
+          <article class="quotes-stat"><span>Accepted</span><strong id="stat-accepted">0</strong><small>Agreed quotations</small></article>
+        </div>
+        <section class="quotes-panel" aria-label="Quote request list">
+          <div class="quotes-toolbar">
+            <div class="quotes-tabs" role="tablist" aria-label="Request direction">
+              <button type="button" class="quotes-tab active" role="tab" aria-selected="true" data-direction="received">Received <span id="received-count">0</span></button>
+              <button type="button" class="quotes-tab" role="tab" aria-selected="false" data-direction="sent">Sent <span id="sent-count">0</span></button>
+            </div>
+            <div class="quotes-controls"><label class="quotes-search"><span class="sr-only">Search requests</span><input type="search" id="quote-search" placeholder="Search requests or companies..."></label><label class="sr-only" for="quote-status">Filter status</label><select id="quote-status"><option value="all">All statuses</option><option value="pending">Pending</option><option value="quoted">Quoted</option><option value="accepted">Accepted</option><option value="rejected">Rejected</option><option value="cancelled">Cancelled</option></select></div>
+          </div>
+          <div id="quote-feedback" class="quotes-feedback" role="status" aria-live="polite" hidden></div>
+          <div class="quotes-table-wrap"><table class="quotes-table"><thead><tr><th>Request / Listing</th><th>Company</th><th>Quantity</th><th>Status</th><th>Updated</th><th>Action</th></tr></thead><tbody id="quote-rows"></tbody></table></div>
+          <div class="quotes-empty" id="quotes-empty" hidden><span class="quotes-empty-icon" aria-hidden="true">▧</span><h2>No quote requests found</h2><p id="quotes-empty-text">Requests will appear here when a company submits one.</p><button type="button" class="quotes-btn quotes-btn-outline" id="empty-request-btn">Explore available listings</button></div>
+        </section>
+        <p class="quotes-demo-note">Demo workspace: requests are saved in this browser. Real-time delivery between devices requires a backend.</p>
+      </div>
+      <div id="company-footer-slot"></div>
+    </main>
+  </div>
+  <dialog id="quote-dialog" class="quotes-dialog" aria-labelledby="dialog-title">
+    <form id="quote-form" novalidate>
+      <div class="quotes-dialog-heading"><div><span class="quotes-eyebrow">B2B PROCUREMENT</span><h2 id="dialog-title">Request a Quote</h2></div><button type="button" class="quotes-close" data-close-dialog aria-label="Close">×</button></div>
+      <p class="quotes-dialog-intro">Choose an available listing from another company and specify what you need.</p>
+      <label class="quotes-field">Available listing <span>*</span><select id="request-listing" required><option value="">Choose a listing</option></select></label>
+      <div class="quotes-two-cols"><label class="quotes-field">Quantity <span>*</span><input id="request-quantity" type="number" min="1" step="1" required></label><label class="quotes-field">Delivery preference<input id="request-delivery" maxlength="120" placeholder="e.g. Delivery to Amman"></label></div>
+      <label class="quotes-field">Additional details<textarea id="request-message" rows="4" maxlength="1000" placeholder="Tell the supplier about your requirements..."></textarea></label>
+      <p class="quotes-inline-error" id="request-error" role="alert" hidden></p>
+      <div class="quotes-dialog-actions"><button type="button" class="quotes-btn quotes-btn-outline" data-close-dialog>Cancel</button><button type="submit" class="quotes-btn quotes-btn-primary">Send Request</button></div>
+    </form>
+  </dialog>
+  <dialog id="details-dialog" class="quotes-dialog" aria-labelledby="details-title"><div id="details-content"></div></dialog>
+  <script src="../js/constants.js" defer></script>
+  <script src="../js/storage.js" defer></script>
+  <script src="../js/auth.js" defer></script>
+  <script src="../js/navigation.js" defer></script>
+  <script src="../shared/companyLayout.js" defer></script>
+  <script src="quote-requests.js" defer></script>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

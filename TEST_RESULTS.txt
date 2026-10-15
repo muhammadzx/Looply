@@ -1,0 +1,5 @@
+Static checks: 24 HTML pages, 29 JS files; JavaScript syntax checks passed; local linked assets checked (one favicon path corrected).
+
+Automated Chromium browser checks attempted for 10 representative pages, 4 language/theme/viewport combinations each. All 40 navigation attempts were blocked by this environment (ERR_BLOCKED_BY_ADMINISTRATOR), so visual overlap, actual translations, and end-to-end interactions COULD NOT be verified. No claim of 100% functionality.
+
+Translation audit: see TRANSLATION_AUDIT.txt for remaining static strings; dynamically generated JS strings need further editorial work.

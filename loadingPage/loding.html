@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looply | Loading</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+<body>
+
+    <main class="loading-container">
+
+        <!-- Logo -->
+        <div class="logo">
+                <a href="login.html" class="logo-icon">
+                <img src="/images/Looply_Logo.png" alt="" class="logo-icon">
+            </a>
+        </div>
+
+        <!-- Loading animation -->
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-arrow">↻</div>
+        </div>
+
+        <!-- Loading text -->
+        <h2>Making business circular.</h2>
+
+        <p class="description">
+            Connecting businesses, resources, and new opportunities.
+        </p>
+
+        <div class="loading-status">
+            <span class="status-dot"></span>
+            Preparing your experience
+        </div>
+
+        <!-- Loading progress animation -->
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <footer>
+            <p>BUY <span>•</span> SELL <span>•</span> REUSE</p>
+            <small>© 2026 Looply. Built for businesses.</small>
+        </footer>
+
+    </main>
+
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

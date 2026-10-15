@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fa">
+
+    <title>Create Listing | Looply</title>
+
+    <link rel="icon" type="image/png" href="../images/FAVICON.png">
+    <link rel="stylesheet" href="../shared/companyLayout.css">
+    <link rel="stylesheet" href="createListing.css">
+
+    <script src="../js/constants.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../shared/companyLayout.js" defer></script>
+    <script src="createListing.js" defer></script>
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+
+<body>
+    <div class="page-shell">
+
+        <!-- Shared Company Sidebar -->
+        <div id="company-sidebar-slot"></div>
+
+        <main class="main-content">
+
+            <!-- Shared Company Header -->
+            <div id="company-header-slot"></div>
+
+            <div class="content-container">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">GROW YOUR BUSINESS</div>
+                        <h1>Create a listing</h1>
+                        <p>
+                            Give your surplus a second life by connecting
+                            it with businesses that need it.
+                        </p>
+                    </div>
+
+                    <a href="../dashboard/companyDashboard.html"
+                       class="back-link">
+                        ← Back to dashboard
+                    </a>
+                </div>
+
+                <div class="listing-layout">
+
+                    <!-- Listing Form -->
+                    <section class="form-card">
+                        <div class="card-heading">
+                            <div>
+                                <h2>Listing information</h2>
+                                <p>
+                                    Complete the details to create your listing.
+                                </p>
+                            </div>
+
+                            <span class="required-note">* Required</span>
+                        </div>
+
+                        <div id="form-feedback"
+                             class="form-feedback"
+                             role="status"
+                             aria-live="polite"
+                             hidden></div>
+
+                        <form id="listing-form">
+
+                            <!-- 01 Product Details -->
+                            <section class="form-section">
+                                <div class="section-heading">
+                                    <span class="section-number">01</span>
+                                    <div>
+                                        <h3>Product details</h3>
+                                        <p>Describe what your business offers.</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="product-name">
+                                        Listing title <span>*</span>
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="product-name"
+                                        name="productName"
+                                        placeholder="e.g. Recycled cardboard boxes"
+                                        maxlength="120"
+                                        required
+                                    >
+
+                                    <small class="field-hint">
+                                        Use a clear title buyers can understand.
+                                    </small>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="category">
+                                            Category <span>*</span>
+                                        </label>
+
+                                        <select id="category" name="category" required>
+                                            <option value="">Select category</option>
+                                            <option value="Raw Materials">Raw Materials</option>
+                                            <option value="Packaging">Packaging</option>
+                                            <option value="Construction">Construction</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Machinery">Machinery &amp; Equipment</option>
+                                            <option value="Textiles">Textiles</option>
+                                            <option value="Food & Agriculture">Food &amp; Agriculture</option>
+                                            <option value="Office Supplies">Office Supplies</option>
+                                            <option value="Plastic & Rubber">Plastic &amp; Rubber</option>
+                                            <option value="Metal">Metal</option>
+                                            <option value="Wood">Wood</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="condition">
+                                            Condition <span>*</span>
+                                        </label>
+
+                                        <select id="condition" name="condition" required>
+                                            <option value="">Select condition</option>
+                                            <option value="New">New</option>
+                                            <option value="Like New">Like New</option>
+                                            <option value="Good">Good</option>
+                                            <option value="Used">Used</option>
+                                            <option value="Recycled">Recycled Material</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description">
+                                        Product description <span>*</span>
+                                    </label>
+
+                                    <textarea
+                                        id="description"
+                                        name="description"
+                                        rows="5"
+                                        maxlength="2000"
+                                        minlength="20"
+                                        placeholder="Describe the product, its specifications, quality, and intended use..."
+                                        required
+                                    ></textarea>
+
+                                    <div class="textarea-footer">
+                                        <small>
+                                            Include specifications and any relevant details.
+                                        </small>
+
+                                        <small id="description-count">0 / 2000</small>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 02 Quantity and Pricing -->
+                            <section class="form-section">
+                                <div class="section-heading">
+                                    <span class="section-number">02</span>
+                                    <div>
+                                        <h3>Quantity &amp; pricing</h3>
+                                        <p>Help buyers understand your offer.</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="quantity">
+                                            Available quantity <span>*</span>
+                                        </label>
+
+                                        <input
+                                            type="number"
+                                            id="quantity"
+                                            name="quantity"
+                                            min="0.01"
+                                            max="1000000000"
+                                            step="any"
+                                            placeholder="e.g. 500"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="unit">
+                                            Unit <span>*</span>
+                                        </label>
+
+                                        <select id="unit" name="unit" required>
+                                            <option value="">Select unit</option>
+                                            <option value="pieces">Pieces</option>
+                                            <option value="kg">Kilograms (kg)</option>
+                                            <option value="tonnes">Tonnes</option>
+                                            <option value="litres">Litres</option>
+                                            <option value="boxes">Boxes</option>
+                                            <option value="pallets">Pallets</option>
+                                            <option value="metres">Metres</option>
+                                            <option value="sets">Sets</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="price">
+                                            Price per unit (JOD) <span>*</span>
+                                        </label>
+
+                                        <div class="input-with-prefix">
+                                            <span>JOD</span>
+                                            <input
+                                                type="number"
+                                                id="price"
+                                                name="price"
+                                                min="0"
+                                                max="1000000000"
+                                                step="0.01"
+                                                placeholder="0.00"
+                                                required
+                                            >
+                                        </div>
+
+                                        <small class="field-hint">
+                                            Enter 0 if the item is free.
+                                        </small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="minimum-order">
+                                            Minimum order quantity
+                                        </label>
+
+                                        <input
+                                            type="number"
+                                            id="minimum-order"
+                                            name="minimumOrder"
+                                            min="0.01"
+                                            max="1000000000"
+                                            step="any"
+                                            placeholder="e.g. 10"
+                                        >
+
+                                        <small class="field-hint">
+                                            Optional; uses the same unit.
+                                        </small>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 03 Location and Availability -->
+                            <section class="form-section">
+                                <div class="section-heading">
+                                    <span class="section-number">03</span>
+                                    <div>
+                                        <h3>Location &amp; availability</h3>
+                                        <p>Tell buyers where the product is located.</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="listing-country">
+                                            Country <span>*</span>
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="listing-country"
+                                            name="country"
+                                            maxlength="80"
+                                            placeholder="e.g. Jordan"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="listing-city">
+                                            City <span>*</span>
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="listing-city"
+                                            name="city"
+                                            maxlength="80"
+                                            placeholder="e.g. Amman"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="availability">
+                                        Availability <span>*</span>
+                                    </label>
+
+                                    <select id="availability" name="availability" required>
+                                        <option value="">Select availability</option>
+                                        <option value="Available now">Available now</option>
+                                        <option value="Available soon">Available soon</option>
+                                    </select>
+                                </div>
+                            </section>
+
+                            <!-- 04 Product Image -->
+                            <section class="form-section">
+                                <div class="section-heading">
+                                    <span class="section-number">04</span>
+                                    <div>
+                                        <h3>Product image</h3>
+                                        <p>A clear image can help buyers understand your offer.</p>
+                                    </div>
+                                </div>
+
+                                <label for="product-image"
+                                       class="upload-area"
+                                       id="upload-area"
+                                       tabindex="0">
+                                    <img id="image-preview"
+                                         class="image-preview"
+                                         alt="Product image preview"
+                                         hidden>
+
+                                    <span class="upload-icon" id="upload-icon">↑</span>
+
+                                    <strong id="upload-title">
+                                        Click to upload an image
+                                    </strong>
+
+                                    <span id="upload-description">
+                                        PNG, JPG or WEBP · Maximum 5 MB
+                                    </span>
+                                </label>
+
+                                <input
+                                    type="file"
+                                    id="product-image"
+                                    name="productImage"
+                                    accept="image/png,image/jpeg,image/webp"
+                                    hidden
+                                >
+
+                                <button type="button"
+                                        class="remove-image"
+                                        id="remove-image"
+                                        hidden>
+                                    Remove image
+                                </button>
+
+                                <small class="field-hint">
+                                    Optional. Images are stored in this browser for the demo.
+                                </small>
+                            </section>
+
+                            <!-- Actions -->
+                            <div class="form-actions">
+                                <a href="../dashboard/companyDashboard.html"
+                                   class="btn btn-secondary">
+                                    Cancel
+                                </a>
+
+                                <button type="submit"
+                                        class="btn btn-primary"
+                                        id="publish-button">
+                                    <span>Create listing</span>
+                                    <span aria-hidden="true">→</span>
+                                </button>
+                            </div>
+
+                            <p class="form-disclaimer">
+                                This demo stores listings locally in your browser.
+                                They are not published to a remote marketplace.
+                            </p>
+                        </form>
+                    </section>
+
+                    <!-- Listing Preview -->
+                    <aside class="preview-column">
+                        <div class="preview-card">
+                            <div class="preview-heading">
+                                <div>
+                                    <span class="preview-eyebrow">LIVE PREVIEW</span>
+                                    <h2>Your listing</h2>
+                                </div>
+
+                                <span class="preview-indicator"></span>
+                            </div>
+
+                            <div class="preview-image-wrap">
+                                <img id="preview-card-image"
+                                     alt="Listing preview"
+                                     hidden>
+
+                                <div id="preview-image-placeholder"
+                                     class="preview-image-placeholder">
+                                    <span>↗</span>
+                                    <p>Your product image will appear here</p>
+                                </div>
+
+                                <span class="preview-category" id="preview-category">
+                                    Category
+                                </span>
+                            </div>
+
+                            <div class="preview-body">
+                                <div class="preview-company">
+                                    <span class="company-dot">L</span>
+                                    <span id="preview-company-name">Your company</span>
+                                </div>
+
+                                <h3 id="preview-title">Your listing title</h3>
+
+                                <p class="preview-description" id="preview-description">
+                                    Your product description will appear here.
+                                </p>
+
+                                <div class="preview-meta">
+                                    <span id="preview-location">Location</span>
+                                    <span id="preview-condition">Condition</span>
+                                </div>
+
+                                <div class="preview-price">
+                                    <div>
+                                        <strong id="preview-price">JOD 0.00</strong>
+                                        <span id="preview-unit">per unit</span>
+                                    </div>
+
+                                    <span class="preview-availability"
+                                          id="preview-availability">
+                                        Availability
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <span class="tip-icon">✦</span>
+                            <div>
+                                <h3>Make your listing stand out</h3>
+                                <p>
+                                    Use a descriptive title, accurate quantities,
+                                    and a clear product description.
+                                </p>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+
+            <footer class="page-footer">
+                <span>© 2026 Looply</span>
+                <span>Buy. Sell. Reuse.</span>
+            </footer>
+        </main>
+    </div>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

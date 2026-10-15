@@ -1,0 +1,282 @@
+[
+  {
+    "page": "dashboard/companyDashboard.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/dashboard/companyDashboard.html\nCall log:\n  - navigating to \"https://loo"
+  },
+  {
+    "page": "dashboard/companyDashboard.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/dashboard/companyDashboard.html\nCall log:\n  - navigating to \"https://loo"
+  },
+  {
+    "page": "dashboard/companyDashboard.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/dashboard/companyDashboard.html\nCall log:\n  - navigating to \"https://loo"
+  },
+  {
+    "page": "dashboard/companyDashboard.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/dashboard/companyDashboard.html\nCall log:\n  - navigating to \"https://loo"
+  },
+  {
+    "page": "marketplace/marketplace.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/marketplace/marketplace.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "marketplace/marketplace.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/marketplace/marketplace.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "marketplace/marketplace.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/marketplace/marketplace.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "marketplace/marketplace.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/marketplace/marketplace.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "quotes/quote-requests.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/quotes/quote-requests.html\nCall log:\n  - navigating to \"https://looply.t"
+  },
+  {
+    "page": "quotes/quote-requests.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/quotes/quote-requests.html\nCall log:\n  - navigating to \"https://looply.t"
+  },
+  {
+    "page": "quotes/quote-requests.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/quotes/quote-requests.html\nCall log:\n  - navigating to \"https://looply.t"
+  },
+  {
+    "page": "quotes/quote-requests.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/quotes/quote-requests.html\nCall log:\n  - navigating to \"https://looply.t"
+  },
+  {
+    "page": "messages/messages.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/messages/messages.html\nCall log:\n  - navigating to \"https://looply.test/"
+  },
+  {
+    "page": "messages/messages.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/messages/messages.html\nCall log:\n  - navigating to \"https://looply.test/"
+  },
+  {
+    "page": "messages/messages.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/messages/messages.html\nCall log:\n  - navigating to \"https://looply.test/"
+  },
+  {
+    "page": "messages/messages.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/messages/messages.html\nCall log:\n  - navigating to \"https://looply.test/"
+  },
+  {
+    "page": "companyProfile/settings.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companyProfile/settings.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "companyProfile/settings.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companyProfile/settings.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "companyProfile/settings.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companyProfile/settings.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "companyProfile/settings.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companyProfile/settings.html\nCall log:\n  - navigating to \"https://looply"
+  },
+  {
+    "page": "companies/companies.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companies/companies.html\nCall log:\n  - navigating to \"https://looply.tes"
+  },
+  {
+    "page": "companies/companies.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companies/companies.html\nCall log:\n  - navigating to \"https://looply.tes"
+  },
+  {
+    "page": "companies/companies.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companies/companies.html\nCall log:\n  - navigating to \"https://looply.tes"
+  },
+  {
+    "page": "companies/companies.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/companies/companies.html\nCall log:\n  - navigating to \"https://looply.tes"
+  },
+  {
+    "page": "orders/orders.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/orders/orders.html\nCall log:\n  - navigating to \"https://looply.test/orde"
+  },
+  {
+    "page": "orders/orders.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/orders/orders.html\nCall log:\n  - navigating to \"https://looply.test/orde"
+  },
+  {
+    "page": "orders/orders.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/orders/orders.html\nCall log:\n  - navigating to \"https://looply.test/orde"
+  },
+  {
+    "page": "orders/orders.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/orders/orders.html\nCall log:\n  - navigating to \"https://looply.test/orde"
+  },
+  {
+    "page": "deals/deals.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/deals/deals.html\nCall log:\n  - navigating to \"https://looply.test/deals/"
+  },
+  {
+    "page": "deals/deals.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/deals/deals.html\nCall log:\n  - navigating to \"https://looply.test/deals/"
+  },
+  {
+    "page": "deals/deals.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/deals/deals.html\nCall log:\n  - navigating to \"https://looply.test/deals/"
+  },
+  {
+    "page": "deals/deals.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/deals/deals.html\nCall log:\n  - navigating to \"https://looply.test/deals/"
+  },
+  {
+    "page": "notifications/notifications.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/notifications/notifications.html\nCall log:\n  - navigating to \"https://lo"
+  },
+  {
+    "page": "notifications/notifications.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/notifications/notifications.html\nCall log:\n  - navigating to \"https://lo"
+  },
+  {
+    "page": "notifications/notifications.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/notifications/notifications.html\nCall log:\n  - navigating to \"https://lo"
+  },
+  {
+    "page": "notifications/notifications.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/notifications/notifications.html\nCall log:\n  - navigating to \"https://lo"
+  },
+  {
+    "page": "listings/myListings.html",
+    "lang": "en",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/listings/myListings.html\nCall log:\n  - navigating to \"https://looply.tes"
+  },
+  {
+    "page": "listings/myListings.html",
+    "lang": "ar",
+    "theme": "light",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/listings/myListings.html\nCall log:\n  - navigating to \"https://looply.tes"
+  },
+  {
+    "page": "listings/myListings.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 1365,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/listings/myListings.html\nCall log:\n  - navigating to \"https://looply.tes"
+  },
+  {
+    "page": "listings/myListings.html",
+    "lang": "ar",
+    "theme": "dark",
+    "width": 390,
+    "exception": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://looply.test/listings/myListings.html\nCall log:\n  - navigating to \"https://looply.tes"
+  }
+]

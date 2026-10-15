@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Set up your company profile on Looply.">
+    <title>Company Onboarding | Looply</title>
+    <link rel="stylesheet" href="companyOnboarding.css">
+
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+
+<body>
+    <header class="topbar">
+        <a href="../landingPage/index.html" class="brand" aria-label="Looply home">
+            <img src="../images/Looply_Logo.png" alt="Looply">
+        </a>
+        <a href="../landingPage/index.html" class="exit-link">Exit setup</a>
+    </header>
+
+    <main class="onboarding">
+        <section class="intro">
+            <span class="eyebrow">WELCOME TO LOOPLY</span>
+            <h1>Let's set up your company</h1>
+            <p>
+                Tell us about your business so you can get the most
+                out of your B2B surplus marketplace experience.
+            </p>
+        </section>
+
+        <section class="setup-card">
+            <div class="progress-heading">
+                <span id="step-label">Step 1 of 3</span>
+                <span id="progress-percent">33%</span>
+            </div>
+
+            <div class="progress-track" role="progressbar" aria-label="Setup progress" aria-valuemin="1"
+                aria-valuemax="3" aria-valuenow="1" id="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <div class="step-indicators" aria-label="Setup steps">
+                <span class="step-indicator active" data-indicator="0">1</span>
+                <span class="step-indicator" data-indicator="1">2</span>
+                <span class="step-indicator" data-indicator="2">3</span>
+            </div>
+
+            <form id="onboarding-form" novalidate>
+                <!-- STEP 1 -->
+                <section class="form-step active" data-step="0">
+                    <div class="section-heading">
+                        <h2>Company information</h2>
+                        <p>Let's start with the basics about your business.</p>
+                    </div>
+
+                    <div class="field">
+                        <label for="company-name">Company name *</label>
+                        <input id="company-name" name="companyName" type="text" placeholder="e.g. GreenTech Solutions"
+                            autocomplete="organization" required maxlength="100">
+                        <small class="field-error" id="company-name-error"></small>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="industry">Industry *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select industry</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="retail">Retail & Wholesale</option>
+                                <option value="construction">Construction</option>
+                                <option value="technology">Technology</option>
+                                <option value="food">Food & Beverage</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="logistics">Logistics & Transportation</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="energy">Energy</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <small class="field-error" id="industry-error"></small>
+                        </div>
+
+                        <div class="field">
+                            <label for="company-size">Company size *</label>
+                            <select id="company-size" name="companySize" required>
+                                <option value="">Select size</option>
+                                <option value="1-10">1–10 employees</option>
+                                <option value="11-50">11–50 employees</option>
+                                <option value="51-200">51–200 employees</option>
+                                <option value="201-500">201–500 employees</option>
+                                <option value="500+">500+ employees</option>
+                            </select>
+                            <small class="field-error" id="company-size-error"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="country">Country *</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select country</option>
+                                <option value="Jordan">Jordan</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="UAE">United Arab Emirates</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <small class="field-error" id="country-error"></small>
+                        </div>
+
+                        <div class="field">
+                            <label for="city">City *</label>
+                            <input id="city" name="city" type="text" placeholder="e.g. Amman"
+                                autocomplete="address-level2" maxlength="80" required>
+                            <small class="field-error" id="city-error"></small>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="website">
+                            Company website
+                            <span class="optional">(Optional)</span>
+                        </label>
+                        <input id="website" name="website" type="url" placeholder="https://yourcompany.com"
+                            autocomplete="url" maxlength="250">
+                        <small class="field-error" id="website-error"></small>
+                    </div>
+                </section>
+
+                <!-- STEP 2 -->
+                <section class="form-step" data-step="1" hidden>
+                    <div class="section-heading">
+                        <h2>Your business profile</h2>
+                        <p>Help other businesses understand what you do.</p>
+                    </div>
+
+                    <div class="field">
+                        <label for="role">Your role in the company *</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="owner">Owner / Founder</option>
+                            <option value="manager">Manager</option>
+                            <option value="procurement">Procurement</option>
+                            <option value="sales">Sales</option>
+                            <option value="operations">Operations</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <small class="field-error" id="role-error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="description">About your company *</label>
+                        <textarea id="description" name="description" rows="5" maxlength="600"
+                            placeholder="Describe your business, products, and services..." required></textarea>
+                        <div class="textarea-footer">
+                            <small>Write a short description of your business.</small>
+                            <small><span id="description-count">0</span>/600</small>
+                        </div>
+                        <small class="field-error" id="description-error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="categories">What products or materials do you handle?</label>
+                        <select id="categories" name="categories">
+                            <option value="">Select a main category</option>
+                            <option value="electronics">Electronics & Equipment</option>
+                            <option value="raw-materials">Raw Materials</option>
+                            <option value="office">Office Supplies & Furniture</option>
+                            <option value="construction">Construction Materials</option>
+                            <option value="packaging">Packaging Materials</option>
+                            <option value="food">Food & Agricultural Products</option>
+                            <option value="machinery">Machinery & Industrial Equipment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- STEP 3 -->
+                <section class="form-step" data-step="2" hidden>
+                    <div class="section-heading">
+                        <h2>What brings you to Looply?</h2>
+                        <p>Select how your company wants to use the marketplace.</p>
+                    </div>
+
+                    <fieldset class="goal-options">
+                        <legend>Choose your business goals *</legend>
+
+                        <label class="goal-card">
+                            <input type="checkbox" name="goals" value="buy">
+                            <span class="goal-icon" aria-hidden="true">↗</span>
+                            <span class="goal-content">
+                                <strong>Buy surplus</strong>
+                                <span>Find products and materials at competitive prices.</span>
+                            </span>
+                            <span class="custom-check" aria-hidden="true"></span>
+                        </label>
+
+                        <label class="goal-card">
+                            <input type="checkbox" name="goals" value="sell">
+                            <span class="goal-icon" aria-hidden="true">↙</span>
+                            <span class="goal-content">
+                                <strong>Sell surplus</strong>
+                                <span>Turn unused inventory into new business opportunities.</span>
+                            </span>
+                            <span class="custom-check" aria-hidden="true"></span>
+                        </label>
+
+                        <label class="goal-card">
+                            <input type="checkbox" name="goals" value="both">
+                            <span class="goal-icon" aria-hidden="true">⇄</span>
+                            <span class="goal-content">
+                                <strong>Both buying and selling</strong>
+                                <span>Buy what you need and sell what you no longer use.</span>
+                            </span>
+                            <span class="custom-check" aria-hidden="true"></span>
+                        </label>
+                    </fieldset>
+
+                    <small class="field-error" id="goals-error" role="alert"></small>
+
+                    <div class="privacy-note">
+                        <span aria-hidden="true">ⓘ</span>
+                        <p>
+                            You can review your company details before completing
+                            setup. Your information will be saved in this browser
+                            for this demo.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="form-feedback" id="form-feedback" role="status" aria-live="polite"></div>
+
+                <div class="form-actions">
+                    <button type="button" id="back-button" class="btn btn-secondary" hidden>
+                        Back
+                    </button>
+                    <button type="button" id="next-button" class="btn btn-primary">
+                        Continue <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="submit" id="finish-button" class="btn btn-primary" hidden>
+                        Complete setup <span aria-hidden="true">✓</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <p class="footer-note">
+            Need help? <a href="mailto:support@looply.example">Contact support</a>
+        </p>
+    </main>
+    <script src="../js/constants.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="companyOnboarding.js" defer></script>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+
+</html>

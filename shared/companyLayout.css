@@ -1,0 +1,181 @@
+/*
+ * Shared Looply company layout.
+ * Reuses the original dashboard styles to preserve its appearance.
+ */
+@import url("../dashboard/companyDashboard.css");
+
+/* Fixed header without covering the sidebar */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 252px;
+    width: calc(100% - 252px);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Keep the main content below the fixed header */
+.main-area,
+.company-content {
+    padding-top: 80px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+/* Prevent content from extending beneath the sidebar */
+.main-content {
+    margin-left: 252px;
+    width: calc(100% - 252px);
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .topbar {
+        left: 0;
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .main-area,
+    .company-content {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* ==============================
+   SHARED COMPANY FOOTER
+================================= */
+
+.company-footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 24px 34px;
+    background-color: #ffffff;
+    border-top: 1px solid #e3eae6;
+    box-sizing: border-box;
+}
+
+.company-footer-content {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.company-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.company-footer-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F5132;
+}
+
+.company-footer-description {
+    font-size: 12px;
+    color: #6b8076;
+}
+
+.company-footer-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.company-footer-links a {
+    color: #526b60;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.company-footer-links a:hover {
+    color: #1E7A5B;
+}
+
+.company-footer-copyright {
+    color: #84968d;
+    font-size: 12px;
+}
+
+/* Footer stays at the bottom of short pages */
+.page-shell > .main-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#company-footer-slot {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .company-footer {
+        padding: 24px 20px;
+    }
+
+    .company-footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .company-footer-links {
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+
+
+.dashboard-footer > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+.company-footer-links a:hover {
+    color: var(--green-700);
+}
+/* Hide the Messages badge completely when no unread messages exist. */
+#messages-nav-count[hidden] { display: none !important; }
+
+#notifications-nav-count[hidden] { display: none !important; }
+
+/* Layout stabilization: both app-layout/main-area and page-shell/main-content */
+:root { --looply-sidebar-size: var(--sidebar-width, 252px); }
+.app-layout, .page-shell { min-height:100vh; }
+.main-area, .main-content, .messages-page-shell {
+  box-sizing:border-box; min-width:0;
+}
+.main-area, .main-content { display:flex;flex-direction:column; }
+.main-area > #company-footer-slot, .main-content > #company-footer-slot { margin-top:auto;width:100%; }
+#company-footer-slot .company-footer { width:100%; }
+@media(min-width:721px) {
+  .main-area { margin-left:var(--looply-sidebar-size);margin-right:0; }
+  .main-content { margin-left:var(--looply-sidebar-size);margin-right:0;width:auto; }
+  .messages-page-shell { margin-left:var(--looply-sidebar-size);margin-right:0; }
+}
+@media(max-width:720px) {
+  .main-area,.main-content,.messages-page-shell {margin-left:0!important;margin-right:0!important;width:100%!important;}
+}

@@ -1,0 +1,401 @@
+/* Company Profile: page-specific rules only. Shared layout remains in companyLayout.css. */
+.company-profile-page {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 80px 34px 48px;
+    box-sizing: border-box;
+}
+
+.profile-page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.profile-eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #1E7A5B;
+    margin-bottom: 8px;
+}
+
+.profile-page-heading h1 {
+    margin: 0 0 8px;
+    color: #183b2b;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.2;
+}
+
+.profile-page-heading p,
+.profile-section-heading p {
+    margin: 0;
+    color: #71847a;
+    font-size: 14px;
+}
+
+.profile-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    min-height: 43px;
+    padding: 10px 19px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .2s, border-color .2s, transform .2s;
+}
+
+.profile-btn:focus-visible {
+    outline: 3px solid #A7D3C2;
+    outline-offset: 2px;
+}
+
+.profile-btn:hover {
+    transform: translateY(-1px);
+}
+
+.profile-btn-outline {
+    background: white;
+    border: 1px solid #cbded4;
+    color: #0F5132;
+}
+
+.profile-btn-outline:hover {
+    background: #f3f7f5;
+}
+
+.profile-btn-primary {
+    background: #0F5132;
+    color: white;
+    border: 1px solid #0F5132;
+}
+
+.profile-btn-primary:hover {
+    background: #1E7A5B;
+}
+
+.profile-btn:disabled {
+    opacity: .6;
+    cursor: wait;
+    transform: none;
+}
+
+.profile-hero {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 26px 28px;
+    border: 1px solid #e1ebe5;
+    border-radius: 18px;
+    background: linear-gradient(115deg, #f3f7f5, #ffffff);
+    margin-bottom: 24px;
+}
+
+.profile-hero-avatar {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 82px;
+    height: 82px;
+    border-radius: 19px;
+    background: #dcefe5;
+    color: #0F5132;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.profile-title-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.profile-title-line h2 {
+    font-size: 22px;
+    color: #193e2d;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.profile-status {
+    background: #e1f2e9;
+    color: #176244;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 6px 10px;
+}
+
+.profile-hero-details>p {
+    color: #61786c;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.profile-meta {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    color: #789086;
+    font-size: 12px;
+}
+
+.profile-card {
+    background: #fff;
+    border: 1px solid #e1ebe5;
+    border-radius: 17px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 25px rgba(13, 67, 41, .025);
+}
+
+.profile-section-heading {
+    border-bottom: 1px solid #e9efeb;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.profile-section-heading h2 {
+    font-size: 18px;
+    margin: 0 0 7px;
+    color: #173c2b;
+}
+
+.profile-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 8px;
+}
+
+.profile-field-full {
+    grid-column: 1/-1;
+}
+
+.profile-field label {
+    color: #2b483a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-field label>span:not(.profile-optional) {
+    color: #b85343;
+}
+
+.profile-optional {
+    color: #91a298;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.profile-field input,
+.profile-field select,
+.profile-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 45px;
+    border: 1px solid #dce7df;
+    border-radius: 9px;
+    padding: 11px 13px;
+    background: white;
+    color: #203e30;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.profile-field textarea {
+    resize: vertical;
+    min-height: 125px;
+}
+
+.profile-field input:disabled,
+.profile-field select:disabled,
+.profile-field textarea:disabled {
+    opacity: 1;
+    color: #486456;
+    background: #f7faf8;
+    cursor: default;
+    -webkit-text-fill-color: #486456;
+}
+
+.profile-field :is(input, select, textarea):not(:disabled):focus {
+    border-color: #1E7A5B;
+    box-shadow: 0 0 0 3px rgba(30, 122, 91, .1);
+}
+
+.profile-field [aria-invalid="true"] {
+    border-color: #bf4d4d !important;
+}
+
+.profile-field-error {
+    display: block;
+    min-height: 0;
+    color: #b53e3e;
+    font-size: 12px;
+}
+
+.profile-field-error:empty {
+    display: none;
+}
+
+.profile-description-count {
+    align-self: flex-end;
+    font-size: 11px;
+    color: #8a9a90;
+}
+
+.profile-goals {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.profile-goal {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border: 1px solid #dce9e1;
+    border-radius: 12px;
+    padding: 18px;
+    background: #fafcfb;
+    cursor: pointer;
+}
+
+.profile-goal:has(input:checked) {
+    background: #edf7f1;
+    border-color: #A7D3C2;
+}
+
+.profile-goal input {
+    margin: 3px 0 0;
+    accent-color: #0F5132;
+}
+
+.profile-goal strong,
+.profile-goal small {
+    display: block;
+}
+
+.profile-goal strong {
+    color: #1b4430;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.profile-goal small {
+    color: #708579;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.profile-goals:disabled .profile-goal {
+    cursor: default;
+}
+
+.profile-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.profile-notice {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    background: #e7f5ec;
+    color: #175d3a;
+    font-size: 13px;
+}
+
+.profile-notice.is-error {
+    background: #fff1ef;
+    color: #a13e36;
+}
+
+.profile-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Shared companyLayout.css handles sidebar width. Use the same 720px mobile breakpoint. */
+@media(max-width:720px) {
+    .company-profile-page {
+        padding: 22px 18px 32px;
+    }
+
+    .profile-page-heading {
+        align-items: flex-start;
+    }
+
+    .profile-hero {
+        padding: 20px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-form-grid,
+    .profile-goals {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:480px) {
+    .profile-page-heading {
+        flex-direction: column;
+    }
+
+    .profile-hero {
+        align-items: flex-start;
+    }
+
+    .profile-hero-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 21px;
+    }
+
+    .profile-title-line h2 {
+        font-size: 19px;
+    }
+
+    .profile-meta {
+        gap: 7px;
+        flex-direction: column;
+    }
+
+    .profile-form-actions {
+        justify-content: stretch;
+    }
+
+    .profile-form-actions .profile-btn {
+        flex: 1;
+    }
+}

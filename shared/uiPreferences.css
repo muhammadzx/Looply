@@ -1,0 +1,133 @@
+/* Shared language + theme layer. Loaded last on every page. */
+html { color-scheme: light; }
+html[dir="rtl"] body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
+html[dir="rtl"] .sidebar { left:auto;right:0; }
+html[dir="rtl"] .topbar { left:0;right:252px; }
+html[dir="rtl"] .main-content { margin-left:0;margin-right:252px; }
+html[dir="rtl"] .sidebar-nav,html[dir="rtl"] .breadcrumb { direction:rtl; }
+html[dir="rtl"] input[type="email"],html[dir="rtl"] input[type="url"],html[dir="rtl"] input[type="tel"],html[dir="rtl"] input[type="password"] {direction:ltr;text-align:left;}
+html[dir="rtl"] .ls-actions { justify-content:flex-start; }
+@media(max-width:768px){html[dir="rtl"] .topbar{right:0;left:0;}html[dir="rtl"] .main-content{margin-right:0;}}
+.looply-ui-controls {display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-inline:10px;}
+.looply-ui-controls label{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-secondary,#6b8076);font-weight:600;}
+.looply-ui-controls select {background:var(--white,#fff);color:var(--text-primary,#24372e);border:1px solid var(--border,#dce5df);border-radius:9px;padding:7px 9px;font:inherit;max-width:125px;cursor:pointer;}
+@media(max-width:900px){.looply-ui-controls{gap:4px;margin-inline:4px}.looply-ui-controls label{font-size:0}.looply-ui-controls select{font-size:12px;padding:7px 5px;max-width:86px}}
+html[data-theme="dark"]{color-scheme:dark;--page-bg:#101916;--white:#192720;--border:#30483c;--text-primary:#e8f2ec;--text-secondary:#b1c7b8;--text-muted:#91aa9b;--green-50:#203a2c;--green-100:#294735;--green-800:#a4e0b9;--green-900:#b9edcc;--green-700:#8ed6a8;--shadow-sm:0 3px 12px #0003;--shadow-md:0 10px 30px #0005;}
+html[data-theme="dark"] body,html[data-theme="dark"] .app-layout,html[data-theme="dark"] .main-area,html[data-theme="dark"] .main-content,html[data-theme="dark"] .company-content{background-color:#101916;color:#e8f2ec;}
+html[data-theme="dark"] :is(.sidebar,.topbar,.company-footer,.ls-card,.ls-nav,.card,.stat-card,.product-card,.listing-card,.company-card,.deal-card,.order-card,.notification-card,.modal-content,.dropdown-menu,.profile-menu,.filter-panel,.filters-panel,.search-box,.table-container,.empty-state,.help-card,.message-panel,.chat-panel,.conversation-list,.conversation-item,.panel,.section-card){background-color:#192720!important;color:#e8f2ec!important;border-color:#30483c!important;}
+html[data-theme="dark"] :is(.app-layout,.page-shell,.main-area,.main-content) :is(h1,h2,h3,h4,h5,h6,strong,label,.ls-heading h1,.ls-section-title h2,.ls-fields label,.ls-checks label,.company-footer-name){color:#e8f2ec!important;}
+html[data-theme="dark"] :is(.app-layout,.page-shell,.main-area,.main-content) :is(p,small,.ls-hint,.ls-section-title p,.ls-heading p,.company-footer-description,.company-footer-copyright){color:#b1c7b8;}
+html[data-theme="dark"] :is(.app-layout,.page-shell,.main-area,.main-content) :is(input,textarea,select){background-color:#14231b!important;color:#e8f2ec!important;border-color:#365343!important;}
+html[data-theme="dark"] :is(.app-layout,.page-shell,.main-area,.main-content) input::placeholder,html[data-theme="dark"] :is(.app-layout,.page-shell,.main-area,.main-content) textarea::placeholder{color:#8da899;}
+html[data-theme="dark"] :is(.ls-nav a,.nav-link,.company-footer-links a){color:#c0d6c8;}
+html[data-theme="dark"] :is(.nav-link:hover,.ls-nav a:hover,.nav-link.active,.nav-link.is-active){background:#254634!important;color:#d9fbe6!important;}
+html[data-theme="dark"] :is(.ls-icon,.ls-eyebrow){background:#254634;color:#a4e0b9;}
+html[data-theme="dark"] :is(table,thead,tbody,tr,td,th){border-color:#30483c;color:#e8f2ec;}
+html[data-theme="dark"] :is(.ls-notice){background:#244635;color:#c7f3d6;border-color:#3d6b51;}
+html[data-theme="dark"] :is(.ls-notice.ls-error){background:#4a2826;color:#ffc8c3;border-color:#a3524a;}
+html[data-theme="dark"] .ls-button{background:#1e7a5b;color:white!important;}
+html[data-theme="dark"] a:not(.ls-button):not(.nav-link):hover{color:#9de7b8;}
+html[data-theme="dark"] ::selection{background:#327953;color:#fff;}
+
+/* RTL: keep the sidebar and content in separate non-overlapping columns. */
+html[dir="rtl"] body {font-family:"Segoe UI",Tahoma,Arial,sans-serif;}
+html[dir="rtl"] .sidebar {inset:0 0 0 auto;border-right:0;border-left:1px solid var(--border,#dce5df);}
+html[dir="rtl"] .main-area,
+html[dir="rtl"] .main-content,
+html[dir="rtl"] .messages-page-shell {margin-left:0!important;margin-right:var(--looply-sidebar-size,252px)!important;}
+html[dir="rtl"] .topbar {left:0!important;right:var(--looply-sidebar-size,252px)!important;width:auto!important;}
+html[dir="rtl"] .sidebar-nav,html[dir="rtl"] .breadcrumb {direction:rtl;}
+html[dir="rtl"] :is(input[type=email],input[type=url],input[type=tel],input[type=password]) {direction:ltr;text-align:left;}
+html[dir="rtl"] :is(.quotes-table,.orders-table,.deals-table) {text-align:right;}
+html[dir="rtl"] .ls-actions {justify-content:flex-start;}
+html[dir="rtl"] .sidebar .nav-link {text-align:start;}
+html[dir="rtl"] .messages-conversation {text-align:start;}
+html[dir="rtl"] .messages-message:not(.is-own) {align-self:flex-start;}
+html[dir="rtl"] .messages-message.is-own {align-self:flex-end;}
+html[dir="rtl"] .messages-conversations {border-right:0;border-left:1px solid var(--msg-line,#dce5df);}
+@media(max-width:720px) {
+ html[dir="rtl"] .main-area,html[dir="rtl"] .main-content,html[dir="rtl"] .messages-page-shell {margin:0!important;width:100%!important;}
+ html[dir="rtl"] .topbar {left:0!important;right:0!important;width:100%!important;}
+ html[dir="rtl"] .sidebar {transform:translateX(105%);}
+ html[dir="rtl"] .sidebar.is-open {transform:translateX(0);}
+}
+/* Make the shared header and footer respect the actual main container width. */
+.topbar {box-sizing:border-box;}
+#company-footer-slot {min-width:0;}
+/* Additional page-specific dark surfaces and readable controls. */
+html[data-theme="dark"] {
+ --msg-bg:#20362a;--msg-line:#365346;--msg-muted:#b4c8b9;--msg-green:#a8e2bd;--msg-accent:#26946a;
+ --background:#101916;--bg:#101916;--surface:#192720;--card-bg:#192720;--input-bg:#14231b;
+ --text:#e8f2ec;--muted:#b1c7b8;--border-color:#365346;
+}
+html[data-theme="dark"] :is(.quotes-page,.orders-page,.deals-page,.messages-main,.marketplace-content,.companies-page,.notifications-page,.product-details-page,.company-page,.listing-page,.profile-page,.dashboard-content,.ls-settings) {color:#e8f2ec!important;}
+html[data-theme="dark"] :is(.quotes-panel,.quotes-stat,.quotes-dialog,.quotes-table th,.quotes-toolbar,.quotes-empty,
+.orders-panel,.orders-stat,.orders-dialog,.orders-table th,.orders-toolbar,
+.deals-panel,.deals-stat,.deals-dialog,.deals-table th,
+.messages-app,.messages-conversations,.messages-chat,.messages-conversation,.messages-search,.messages-dialog,.directory-card,.messages-product,.messages-compose,.messages-chat-header,.messages-list-head,
+.market-hero,.filters,.results-panel,.market-card,.market-empty,.market-heading,.results-toolbar,
+.company-directory-card,.companies-card,.companies-filter,.company-details-card,
+.notification-item,.notifications-panel,.notification-filter,
+.product-details-card,.product-info,.seller-card,.company-info-card,
+.listing-form,.form-card,.form-section,.form-group,.profile-card,.profile-section,
+.quotes-btn-outline,.ls-card,.ls-nav,.ls-fields input:disabled) {
+ background-color:#192720!important;color:#e8f2ec!important;border-color:#365346!important;
+}
+html[data-theme="dark"] :is(.quotes-table td,.quotes-table td strong,.quotes-stat strong,.quotes-heading h1,
+.orders-table td,.deals-table td,.market-heading h2,.market-hero h1,.messages-chat-header strong,
+.messages-company-link,.messages-chat-header .messages-company-link,
+.market-card h3,.company-card h3,.notifications-page h1,
+.ls-section-title h2,.ls-heading h1) {color:#e8f2ec!important;}
+html[data-theme="dark"] :is(.quotes-table th,.quotes-table td small,.quotes-stat span,.quotes-stat small,.quotes-heading p,
+.messages-conversation-bottom p,.messages-chat-placeholder p,.market-heading p,.results-description,
+.company-footer-description,.company-footer-copyright) {color:#b1c7b8!important;}
+html[data-theme="dark"] :is(button:not(.ls-button):not(.quotes-btn-primary):not(.messages-btn-primary),
+input,select,textarea) {border-color:#365346;}
+html[data-theme="dark"] :is(.messages-conversation:hover,.messages-conversation.is-active,.quotes-btn-outline:hover,.directory-card:hover) {background-color:#294535!important;}
+html[data-theme="dark"] :is(.messages-bubble,.messages-search,.messages-product,.messages-compose textarea,.market-empty,.quotes-status) {background-color:#20362a!important;color:#e8f2ec!important;}
+html[data-theme="dark"] .messages-message.is-own .messages-bubble {background-color:#1e7a5b!important;color:white!important;}
+html[data-theme="dark"] :is(.quotes-status.pending,.quotes-status.rejected,.quotes-status.accepted,.quotes-status.quoted) {color:#e8f2ec!important;}
+html[data-theme="dark"] :is(.topbar,.company-footer,.sidebar) {background:#192720!important;color:#e8f2ec!important;}
+
+
+/* =========================================================
+   LOOPLY V3 — AUDITED DARK COMPONENT CONTRAST
+   Target the actual page class names; avoid blanket overrides.
+   ========================================================= */
+html[data-theme="dark"] {--lp-surface:#192b22;--lp-surface-raised:#20372b;--lp-bg:#101916;--lp-border:#3a5949;--lp-fg:#ecf6ef;--lp-subtle:#b4cebc;--lp-link:#9de7b8;}
+/* Deals: stats, toolbar, tabs, cards, dialogue */
+html[data-theme="dark"] .deals-page :is(.deals-stats>div,.deal-card,.deals-empty,.review-dialog,.deals-tabs,.deals-filter select){background:#192b22!important;color:#ecf6ef!important;border-color:#3a5949!important;}
+html[data-theme="dark"] .deals-page :is(.deals-stats strong,.deals-heading h1,.deal-top h2,.deal-meta span,.deals-filter,.deals-filter select,.deals-tabs button){color:#ecf6ef!important;}
+html[data-theme="dark"] .deals-page :is(.deals-stats span,.deals-heading p,.deal-meta small){color:#b4cebc!important;}
+html[data-theme="dark"] .deals-page .deals-tabs button.active{background:#315b43!important;color:#fff!important;}
+html[data-theme="dark"] .deals-page .deal-actions :is(a,button):not(.primary){background:#20372b!important;color:#d9f3e1!important;border-color:#426650!important;}
+html[data-theme="dark"] .deals-page .deal-tag{background:#2a543c!important;color:#d8f9e3!important;}
+/* Companies: metrics and search toolbar */
+html[data-theme="dark"] .companies-page :is(.companies-stats>div,.companies-toolbar,.company-card,.companies-empty){background:#192b22!important;color:#ecf6ef!important;border-color:#3a5949!important;}
+html[data-theme="dark"] .companies-page :is(.companies-stats strong,.company-name,.company-metrics strong,.companies-empty h2,.companies-toolbar label){color:#ecf6ef!important;}
+html[data-theme="dark"] .companies-page :is(.companies-stats span,.companies-results p,.company-description,.company-industry,.company-location,.company-metrics,.companies-empty p){color:#b4cebc!important;}
+html[data-theme="dark"] .companies-page :is(.company-action:not(.primary),.companies-pagination button){background:#20372b!important;color:#d9f3e1!important;border-color:#426650!important;}
+html[data-theme="dark"] .companies-page .company-avatar{background:#2a543c!important;color:#d8f9e3!important;}
+/* My Listings: summary, white inventory panel, striped table */
+html[data-theme="dark"] .my-listings-content :is(.my-listings-stat-card,.my-listings-panel,.my-listings-panel-header,.my-listings-filters,.my-listings-search,.my-listings-empty,.my-listings-error,.listings-table,.my-listings-table,.my-listings-table-scroll,.my-listings-toolbar){background:#192b22!important;color:#ecf6ef!important;border-color:#3a5949!important;}
+html[data-theme="dark"] .my-listings-content :is(.my-listings-stat-card strong,.my-listings-heading h1,.my-listings-panel h2,.listing-product-name,.listing-price,.my-listings-count){color:#ecf6ef!important;}
+html[data-theme="dark"] .my-listings-content :is(.my-listings-stat-card p,.my-listings-stat-card span,.my-listings-heading p,.my-listings-panel p,.listing-product-meta,.my-listings-table th,.listings-table th){color:#b4cebc!important;}
+html[data-theme="dark"] .my-listings-content :is(.my-listings-table thead,.my-listings-table thead tr,.my-listings-table tbody tr,.listings-table thead,.listings-table tbody tr,.listing-tab,.my-listings-tabs){background:#192b22!important;color:#ecf6ef!important;border-color:#3a5949!important;}
+html[data-theme="dark"] .my-listings-content :is(.my-listings-table tbody tr:nth-child(even),.listings-table tbody tr:nth-child(even)){background:#20372b!important;}
+html[data-theme="dark"] .my-listings-content :is(.listing-action-btn,.my-listings-pagination button){background:#20372b!important;color:#d9f3e1!important;border-color:#426650!important;}
+html[data-theme="dark"] .my-listings-content .listing-tab.active{color:#a8eac0!important;border-color:#a8eac0!important;}
+/* Dashboard: recent listings white striped rows */
+html[data-theme="dark"] .dashboard-content :is(.stat-card,.panel,.panel-header,.table-scroll,.listings-table,.quick-actions,.quick-action,.empty-state,.setup-panel){background:#192b22!important;color:#ecf6ef!important;border-color:#3a5949!important;}
+html[data-theme="dark"] .dashboard-content :is(.listings-table thead,.listings-table thead tr,.listings-table tbody tr,.listings-table td,.listings-table th){background:#192b22!important;color:#ecf6ef!important;border-color:#3a5949!important;}
+html[data-theme="dark"] .dashboard-content .listings-table tbody tr:nth-child(even){background:#20372b!important;}
+html[data-theme="dark"] .dashboard-content .listings-table tbody tr:nth-child(even) td{background:#20372b!important;}
+html[data-theme="dark"] .dashboard-content :is(.stat-value,.panel-header h2,.quick-action-text strong,.listings-table td strong){color:#ecf6ef!important;}
+html[data-theme="dark"] .dashboard-content :is(.stat-label,.stat-foot,.panel-header p,.quick-action-text p,.listings-table th,.listings-table td small){color:#b4cebc!important;}
+/* Create/edit listings: upload and product preview, including hint card */
+html[data-theme="dark"] :is(.listing-layout,.content-container) :is(.form-card,.preview-card,.preview-image-wrap,.preview-image-placeholder,.upload-area,.tip-card,.image-preview,.preview-body){background:#192b22!important;color:#ecf6ef!important;border-color:#3a5949!important;}
+html[data-theme="dark"] :is(.listing-layout,.content-container) :is(.upload-area,.preview-image-placeholder,.tip-card){background:#20372b!important;}
+html[data-theme="dark"] :is(.listing-layout,.content-container) :is(.preview-heading,.preview-price,.preview-company,.section-heading h2,.card-heading h2,.page-heading h1){color:#ecf6ef!important;}
+html[data-theme="dark"] :is(.listing-layout,.content-container) :is(.preview-description,.preview-meta,.field-hint,.form-disclaimer,.preview-eyebrow,.preview-category,.preview-availability,.tip-card p,.upload-area p){color:#b4cebc!important;}
+html[data-theme="dark"] :is(.listing-layout,.content-container) .upload-icon{background:#2b513c!important;color:#d8f9e3!important;}
+/* All page tables should have predictable dark headers/rows, not white-on-white */
+html[data-theme="dark"] :is(.my-listings-content,.dashboard-content,.deals-page,.companies-page) :is(th,td){border-color:#3a5949!important;}

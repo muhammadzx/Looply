@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your Looply company profile and business information.">
+  <title>Company Profile | Looply</title>
+  <link rel="icon" href="../images/FAVICON.png" type="image/png">
+  <link rel="stylesheet" href="../shared/companyLayout.css">
+  <link rel="stylesheet" href="companyProfile.css">
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+<body>
+  <div class="page-shell">
+    <div id="company-sidebar-slot"></div>
+    <main class="main-content">
+      <div id="company-header-slot"></div>
+      <div class="content-container company-profile-page">
+        <div class="profile-page-heading">
+          <div>
+            <span class="profile-eyebrow">COMPANY WORKSPACE</span>
+            <h1>Company Profile</h1>
+            <p>Manage how your business is represented on Looply.</p>
+          </div>
+          <button type="button" class="profile-btn profile-btn-outline" id="edit-profile-button">Edit profile</button>
+        </div>
+
+        <div class="profile-hero">
+          <div class="profile-hero-avatar" id="profile-company-avatar" aria-hidden="true">LC</div>
+          <div class="profile-hero-details">
+            <div class="profile-title-line">
+              <h2 id="profile-company-name">Your Company</h2>
+              <span class="profile-status">Company account</span>
+            </div>
+            <p id="profile-company-industry">Industry not specified</p>
+            <div class="profile-meta">
+              <span id="profile-company-location">Location not specified</span>
+              <span id="profile-company-size">Company size not specified</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-notice" id="profile-feedback" role="status" aria-live="polite" hidden></div>
+
+        <form id="company-profile-form" novalidate>
+          <section class="profile-card">
+            <div class="profile-section-heading">
+              <div><h2>Company information</h2><p>Basic details about your organization.</p></div>
+            </div>
+            <div class="profile-form-grid">
+              <div class="profile-field profile-field-full">
+                <label for="company-name">Company name <span aria-hidden="true">*</span></label>
+                <input id="company-name" name="companyName" maxlength="100" autocomplete="organization" required disabled>
+                <small class="profile-field-error" id="company-name-error"></small>
+              </div>
+              <div class="profile-field">
+                <label for="industry">Industry <span aria-hidden="true">*</span></label>
+                <select id="industry" name="industry" required disabled>
+                  <option value="">Select industry</option>
+                  <option value="manufacturing">Manufacturing</option>
+                  <option value="retail">Retail &amp; Wholesale</option>
+                  <option value="construction">Construction</option>
+                  <option value="technology">Technology</option>
+                  <option value="food">Food &amp; Beverage</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="logistics">Logistics &amp; Transportation</option>
+                  <option value="agriculture">Agriculture</option>
+                  <option value="energy">Energy</option>
+                  <option value="other">Other</option>
+                </select>
+                <small class="profile-field-error" id="industry-error"></small>
+              </div>
+              <div class="profile-field">
+                <label for="company-size">Company size <span aria-hidden="true">*</span></label>
+                <select id="company-size" name="companySize" required disabled>
+                  <option value="">Select size</option>
+                  <option value="1-10">1–10 employees</option>
+                  <option value="11-50">11–50 employees</option>
+                  <option value="51-200">51–200 employees</option>
+                  <option value="201-500">201–500 employees</option>
+                  <option value="500+">500+ employees</option>
+                </select>
+                <small class="profile-field-error" id="company-size-error"></small>
+              </div>
+              <div class="profile-field">
+                <label for="country">Country <span aria-hidden="true">*</span></label>
+                <select id="country" name="country" required disabled>
+                  <option value="">Select country</option>
+                  <option value="Jordan">Jordan</option>
+                  <option value="Saudi Arabia">Saudi Arabia</option>
+                  <option value="UAE">United Arab Emirates</option>
+                  <option value="Egypt">Egypt</option>
+                  <option value="Other">Other</option>
+                </select>
+                <small class="profile-field-error" id="country-error"></small>
+              </div>
+              <div class="profile-field">
+                <label for="city">City <span aria-hidden="true">*</span></label>
+                <input id="city" name="city" maxlength="80" autocomplete="address-level2" required disabled>
+                <small class="profile-field-error" id="city-error"></small>
+              </div>
+              <div class="profile-field profile-field-full">
+                <label for="website">Company website <span class="profile-optional">Optional</span></label>
+                <input id="website" name="website" type="url" maxlength="250" placeholder="https://yourcompany.com" autocomplete="url" disabled>
+                <small class="profile-field-error" id="website-error"></small>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-card">
+            <div class="profile-section-heading"><div><h2>Business profile</h2><p>Tell other businesses what you do and what you handle.</p></div></div>
+            <div class="profile-form-grid">
+              <div class="profile-field">
+                <label for="role">Your role <span aria-hidden="true">*</span></label>
+                <select id="role" name="role" required disabled>
+                  <option value="">Select your role</option>
+                  <option value="owner">Owner / Founder</option>
+                  <option value="manager">Manager</option>
+                  <option value="procurement">Procurement</option>
+                  <option value="sales">Sales</option>
+                  <option value="operations">Operations</option>
+                  <option value="other">Other</option>
+                </select>
+                <small class="profile-field-error" id="role-error"></small>
+              </div>
+              <div class="profile-field">
+                <label for="categories">Main category</label>
+                <select id="categories" name="categories" disabled>
+                  <option value="">Select a main category</option>
+                  <option value="electronics">Electronics &amp; Equipment</option>
+                  <option value="raw-materials">Raw Materials</option>
+                  <option value="office">Office Supplies &amp; Furniture</option>
+                  <option value="construction">Construction Materials</option>
+                  <option value="packaging">Packaging Materials</option>
+                  <option value="food">Food &amp; Agricultural Products</option>
+                  <option value="machinery">Machinery &amp; Industrial Equipment</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="profile-field profile-field-full">
+                <label for="description">About your company <span aria-hidden="true">*</span></label>
+                <textarea id="description" name="description" rows="5" minlength="20" maxlength="600" required disabled></textarea>
+                <div class="profile-description-count"><span id="description-count">0</span>/600</div>
+                <small class="profile-field-error" id="description-error"></small>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-card">
+            <div class="profile-section-heading"><div><h2>Business goals</h2><p>How your company uses Looply.</p></div></div>
+            <fieldset class="profile-goals" id="profile-goals" disabled>
+              <legend class="profile-visually-hidden">Business goals</legend>
+              <label class="profile-goal"><input type="checkbox" name="goals" value="buy"><span><strong>Buy surplus</strong><small>Source materials and products from other businesses.</small></span></label>
+              <label class="profile-goal"><input type="checkbox" name="goals" value="sell"><span><strong>Sell surplus</strong><small>Turn excess inventory into business opportunities.</small></span></label>
+            </fieldset>
+            <small class="profile-field-error" id="goals-error"></small>
+          </section>
+
+          <div class="profile-form-actions" id="profile-form-actions" hidden>
+            <button type="button" class="profile-btn profile-btn-outline" id="cancel-profile-button">Cancel</button>
+            <button type="submit" class="profile-btn profile-btn-primary" id="save-profile-button">Save changes</button>
+          </div>
+        </form>
+      </div>
+      <div id="company-footer-slot"></div>
+    </main>
+  </div>
+  <script src="../js/constants.js" defer></script>
+  <script src="../js/storage.js" defer></script>
+  <script src="../js/auth.js" defer></script>
+  <script src="../js/navigation.js" defer></script>
+  <script src="../shared/companyLayout.js" defer></script>
+  <script src="companyProfile.js" defer></script>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

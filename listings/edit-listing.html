@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fa">
+
+    <title>Edit Listing | Looply</title>
+
+    <link rel="icon" type="image/png" href="../images/FAVICON.png">
+    <link rel="stylesheet" href="../shared/companyLayout.css">
+    <link rel="stylesheet" href="edit-listing.css">
+
+    <script src="../js/constants.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../shared/companyLayout.js" defer></script>
+    <script src="edit-listing.js" defer></script>
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+<body>
+    <div class="page-shell">
+        <div id="company-sidebar-slot"></div>
+
+        <main class="main-content">
+            <div id="company-header-slot"></div>
+
+            <div class="edit-container">
+                <header class="edit-heading">
+                    <div>
+                        <span class="eyebrow">MANAGE YOUR PRODUCTS</span>
+                        <h1>Edit listing</h1>
+                        <p>Update your product information and keep your offer accurate.</p>
+                    </div>
+
+                    <a href="myListings.html" class="back-link">
+                        ← Back to My Listings
+                    </a>
+                </header>
+
+                <div id="edit-feedback" class="edit-feedback" role="status"
+                     aria-live="polite" hidden></div>
+
+                <div id="edit-loading" class="edit-message">
+                    Loading listing details...
+                </div>
+
+                <form id="edit-listing-form" hidden>
+                    <section class="edit-card">
+                        <div class="section-heading">
+                            <span class="section-number">01</span>
+                            <div>
+                                <h2>Product details</h2>
+                                <p>Update the information buyers see.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-name">Listing title *</label>
+                            <input id="product-name" name="title" type="text"
+                                   maxlength="120" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="category">Category *</label>
+                                <select id="category" name="category" required>
+                                    <option value="">Select category</option>
+                                    <option value="Raw Materials">Raw Materials</option>
+                                    <option value="Packaging">Packaging</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Machinery">Machinery &amp; Equipment</option>
+                                    <option value="Textiles">Textiles</option>
+                                    <option value="Food & Agriculture">Food &amp; Agriculture</option>
+                                    <option value="Office Supplies">Office Supplies</option>
+                                    <option value="Plastic & Rubber">Plastic &amp; Rubber</option>
+                                    <option value="Metal">Metal</option>
+                                    <option value="Wood">Wood</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="condition">Condition *</label>
+                                <select id="condition" name="condition" required>
+                                    <option value="">Select condition</option>
+                                    <option value="New">New</option>
+                                    <option value="Like New">Like New</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Used">Used</option>
+                                    <option value="Recycled">Recycled Material</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description *</label>
+                            <textarea id="description" name="description"
+                                      rows="5" maxlength="2000"
+                                      minlength="20" required></textarea>
+                            <div class="field-hint" id="description-count">0 / 2000</div>
+                        </div>
+                    </section>
+
+                    <section class="edit-card">
+                        <div class="section-heading">
+                            <span class="section-number">02</span>
+                            <div>
+                                <h2>Quantity &amp; pricing</h2>
+                                <p>Keep quantities and prices up to date.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quantity">Available quantity *</label>
+                                <input id="quantity" name="quantity" type="number"
+                                       min="0.01" max="1000000000" step="any" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="unit">Unit *</label>
+                                <select id="unit" name="unit" required>
+                                    <option value="">Select unit</option>
+                                    <option value="pieces">Pieces</option>
+                                    <option value="kg">Kilograms (kg)</option>
+                                    <option value="tonnes">Tonnes</option>
+                                    <option value="litres">Litres</option>
+                                    <option value="boxes">Boxes</option>
+                                    <option value="pallets">Pallets</option>
+                                    <option value="metres">Metres</option>
+                                    <option value="sets">Sets</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="price">Price per unit (JOD) *</label>
+                                <input id="price" name="price" type="number"
+                                       min="0" max="1000000000"
+                                       step="0.01" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="minimum-order">Minimum order quantity</label>
+                                <input id="minimum-order" name="minimumOrder"
+                                       type="number" min="0.01"
+                                       max="1000000000" step="any">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="edit-card">
+                        <div class="section-heading">
+                            <span class="section-number">03</span>
+                            <div>
+                                <h2>Location &amp; availability</h2>
+                                <p>Tell buyers where and when the product is available.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listing-country">Country *</label>
+                                <input id="listing-country" name="country"
+                                       maxlength="80" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="listing-city">City *</label>
+                                <input id="listing-city" name="city"
+                                       maxlength="80" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="availability">Availability *</label>
+                            <select id="availability" name="availability" required>
+                                <option value="">Select availability</option>
+                                <option value="Available now">Available now</option>
+                                <option value="Available soon">Available soon</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section class="edit-card">
+                        <div class="section-heading">
+                            <span class="section-number">04</span>
+                            <div>
+                                <h2>Product image</h2>
+                                <p>Keep the current image or upload a replacement.</p>
+                            </div>
+                        </div>
+
+                        <div class="image-editor">
+                            <img id="current-image" alt="Current product image" hidden>
+                            <div id="no-image" class="no-image">No product image</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-image">Replace image (optional)</label>
+                            <input id="product-image" type="file"
+                                   accept="image/jpeg,image/png,image/webp">
+                            <small class="field-hint">JPG, PNG or WEBP. Maximum 5 MB.</small>
+                        </div>
+
+                        <label class="remove-image-option">
+                            <input id="remove-image" type="checkbox">
+                            Remove the current product image
+                        </label>
+                    </section>
+
+                    <div class="edit-actions">
+                        <a href="myListings.html" class="btn btn-secondary">Cancel</a>
+                        <button id="save-changes" type="submit" class="btn btn-primary">
+                            Save changes
+                        </button>
+                    </div>
+                </form>
+
+                <div id="edit-error" class="edit-message" hidden>
+                    <h2>Listing unavailable</h2>
+                    <p id="edit-error-message">This listing could not be loaded.</p>
+                    <a href="myListings.html" class="btn btn-secondary">Back to My Listings</a>
+                </div>
+            </div>
+
+            <!-- <footer class="page-footer">
+                <span>© 2026 Looply</span>
+                <span>Buy. Sell. Reuse.</span>
+            </footer> -->
+        </main>
+    </div>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

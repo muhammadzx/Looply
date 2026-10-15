@@ -1,0 +1,93 @@
+<aside class="sidebar" id="sidebar">
+    <a href="../landingPage/index.html" class="brand">
+        <img src="../images/Looply_Logo.png" alt="Looply">
+    </a>
+
+    <div class="sidebar-label">WORKSPACE</div>
+
+    <nav class="sidebar-nav" aria-label="Main navigation">
+        <a href="../dashboard/companyDashboard.html" class="nav-link " data-dashboard-link>
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../marketplace/marketplace.html" class="nav-link" data-page="marketplace"><span class="nav-icon" aria-hidden="true">▦</span><span>Marketplace</span></a>
+        <a href="../companies/companies.html" class="nav-link" data-page="companies"><span class="nav-icon" aria-hidden="true">◎</span><span>Companies</span></a>
+        <a href="../orders/orders.html" class="nav-link" data-page="orders"><span class="nav-icon" aria-hidden="true">▣</span><span>Purchase Orders</span></a>
+
+        <a href="#" class="nav-link" data-page="myListings">
+            <span class="nav-icon" aria-hidden="true">▤</span>
+            <span>My Listings</span>
+        </a>
+
+        <a href="../listings/createListing.html" class="nav-link" data-page="createListing">
+            <span class="nav-icon" aria-hidden="true">＋</span>
+            <span>Add Listing</span>
+        </a>
+
+        <a href="#" class="nav-link" data-page="quoteRequests">
+            <span class="nav-icon" aria-hidden="true">▧</span>
+            <span>Quote Requests</span>
+            <span class="nav-badge" id="quote-nav-count">0</span>
+        </a>
+
+        <a href="#" class="nav-link" data-page="messages">
+            <span class="nav-icon" aria-hidden="true">▱</span>
+            <span>Messages</span>
+            <span class="nav-badge" id="messages-nav-count" aria-label="Unread messages" hidden></span>
+        </a>
+
+        <a href="#" class="nav-link" data-page="deals">
+            <span class="nav-icon" aria-hidden="true">⇄</span>
+            <span>Deals</span>
+        </a>
+
+        <a href="#" class="nav-link" data-page="notifications">
+            <span class="nav-icon" aria-hidden="true">♧</span>
+            <span>Notifications</span>
+            <span class="nav-badge" id="notifications-nav-count" aria-label="Unread notifications" hidden></span>
+        </a>
+
+        <div class="sidebar-label sidebar-label-spaced">COMPANY</div>
+
+        <a href="#" class="nav-link" data-page="companyProfile">
+            <span class="nav-icon" aria-hidden="true">▣</span>
+            <span>Company Profile</span>
+        </a>
+
+        <a href="#" class="nav-link" data-page="settings">
+            <span class="nav-icon" aria-hidden="true">⚙</span>
+            <span>Settings</span>
+        </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="help-card">
+            <div class="help-icon" aria-hidden="true">?</div>
+            <div>
+                <strong>Need some help?</strong>
+                <p>We're here to help you grow.</p>
+                <a href="../pages/contact.html">Contact support →</a>
+            </div>
+        </div>
+
+        <div class="account-mini">
+            <div class="avatar" id="sidebar-avatar">GT</div>
+
+            <div class="account-mini-info">
+                <strong id="sidebar-company">GreenTech Solutions</strong>
+                <span>Company account</span>
+            </div>
+
+            <button
+                class="icon-button logout-button"
+                type="button"
+                data-looply-logout
+                aria-label="Log out"
+                title="Log out"
+            >↗</button>
+        </div>
+    </div>
+</aside>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>

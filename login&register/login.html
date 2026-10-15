@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | Looply</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<link rel="stylesheet" href="../shared/publicTheme.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+
+<body>
+
+    <main class="auth-layout">
+
+        <!-- Left Side: Brand -->
+        <section class="brand-panel">
+
+            <a href="login.html" class="logo">
+                <img src="../images/Looply_Logo.png" alt="" class="logo-icon">
+            </a>
+
+            <div class="brand-content">
+                <span class="eyebrow">SMARTER B2B COMMERCE</span>
+
+                <h1>
+                    Turn surplus<br>
+                    into <span>opportunity.</span>
+                </h1>
+
+                <p>
+                    Connect with businesses, discover valuable resources,
+                    and turn unused inventory into new opportunities.
+                </p>
+
+                <div class="brand-stats">
+                    <div>
+                        <strong>01</strong>
+                        <span>List surplus</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>Find buyers</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>Make deals</span>
+                    </div>
+                </div>
+            </div>
+
+             <div class="brand-footer">
+                <span>Built for businesses.</span>
+                <span>© 2026 Looply</span>
+            </div>
+
+        </section>
+
+        <!-- Right Side: Login Form -->
+        <section class="form-panel">
+
+            <div class="mobile-logo">
+                <a href="login.html" class="logo">
+                <img src="../images/Looply_Logo.png" alt="" class="logo-icon">
+            </a>
+            </div>
+
+            <div class="auth-form-container">
+
+                <div class="form-heading">
+                    <span class="eyebrow">WELCOME BACK</span>
+
+                    <h2>Sign in to your account</h2>
+
+                    <p>
+                        Welcome back! Please enter your details.
+                    </p>
+                </div>
+
+                <form action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="email">Business email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@company.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-row">
+                            <label for="password">Password</label>
+
+                            <a href="forgot-password.html" class="text-link">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                name="remember"
+                            >
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Sign in
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                </form>
+
+                <div class="form-divider">
+                    <span>OR</span>
+                </div>
+
+                <p class="switch-auth">
+                    Don't have an account?
+                    <a href="register.html" class="text-link">
+                        Create an account
+                    </a>
+                </p>
+                    
+                <p class="security-note">
+                    <span aria-hidden="true">✓</span>
+                    A professional marketplace built for businesses.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<script src="../js/constants.js" defer></script>
+<script src="../js/storage.js" defer></script>
+<script src="../js/auth.js" defer></script>
+<script src="../js/navigation.js" defer></script>
+<script src="login.js" defer></script>
+
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

@@ -1,0 +1,728 @@
+
+/* =========================
+   1. RESET & VARIABLES
+========================= */
+
+:root {
+    --primary: #176b50;
+    --primary-dark: #10533e;
+    --primary-light: #e9f4ef;
+
+    --background: #ffffff;
+    --surface: #f8faf9;
+
+    --text: #172b25;
+    --text-secondary: #718079;
+
+    --border: #e1e8e4;
+    --input-bg: #ffffff;
+
+    --radius: 10px;
+    --transition: 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   2. MAIN LAYOUT
+========================= */
+
+.auth-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+
+/* =========================
+   3. BRAND PANEL
+========================= */
+
+.brand-panel {
+    background: #f2f7f4;
+    padding: 42px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.brand-panel::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    right: -170px;
+    bottom: 10%;
+    border-radius: 50%;
+    border: 1px solid rgba(23, 107, 80, 0.12);
+    z-index: -1;
+}
+
+.brand-panel::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    right: -110px;
+    bottom: calc(10% + 60px);
+    border-radius: 50%;
+    border: 1px solid rgba(23, 107, 80, 0.12);
+    z-index: -1;
+}
+
+
+/* =========================
+   4. LOGO
+========================= */
+
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.logo-icon {
+    display: block;
+    width: 190px;
+    height: 90px;
+    object-fit: contain;
+}
+
+
+
+/* =========================
+   5. BRAND CONTENT
+========================= */
+
+.brand-content {
+    max-width: 480px;
+    margin: 60px auto;
+    width: 100%;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--primary);
+    margin-bottom: 18px;
+}
+
+.brand-content h1 {
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    font-weight: 750;
+    margin-bottom: 22px;
+}
+
+.brand-content h1 span {
+    color: var(--primary);
+}
+
+.brand-content > p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    max-width: 390px;
+    line-height: 1.9;
+}
+
+
+/* =========================
+   6. BRAND STATS
+========================= */
+
+.brand-stats {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 42px;
+}
+
+.brand-stats div:not(.stat-divider) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand-stats strong {
+    font-size: 23px;
+    color: var(--primary);
+}
+
+.brand-stats span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+}
+
+
+/* =========================
+   7. REGISTER BENEFITS
+========================= */
+
+.benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 38px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.benefit-icon {
+    min-width: 42px;
+    height: 42px;
+    border: 1px solid #d4e5dc;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.benefit-item strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.benefit-item p {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   8. BRAND FOOTER
+========================= */
+
+.brand-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #87948d;
+    font-size: 11px;
+}
+
+
+/* =========================
+   9. FORM PANEL
+========================= */
+
+.form-panel {
+    padding: 40px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+}
+
+.auth-form-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.register-container {
+    max-width: 460px;
+    padding: 15px 0;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+
+/* =========================
+   10. FORM HEADING
+========================= */
+
+.form-heading {
+    margin-bottom: 32px;
+}
+
+.form-heading .eyebrow {
+    margin-bottom: 10px;
+}
+
+.form-heading h2 {
+    font-size: 29px;
+    letter-spacing: -0.8px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.form-heading > p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* =========================
+   11. FORM FIELDS
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 650;
+    color: #34473e;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    outline: none;
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 13px;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.form-group input::placeholder {
+    color: #a2ada7;
+}
+
+.form-group select {
+    color: #53645b;
+    cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(23, 107, 80, 0.09);
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible {
+    outline: none;
+}
+
+.field-hint {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =========================
+   12. FORM ROW
+========================= */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+/* =========================
+   13. LINKS
+========================= */
+
+.text-link {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    transition: color var(--transition);
+}
+
+.text-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+
+/* =========================
+   14. CHECKBOXES
+========================= */
+
+.form-options {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -3px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.checkbox-label input {
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.terms-label {
+    line-height: 1.8;
+    margin-top: -2px;
+}
+
+.terms-label .text-link {
+    font-size: inherit;
+}
+
+
+/* =========================
+   15. PRIMARY BUTTON
+========================= */
+
+
+.btn-primary {
+    width: 100%;
+    min-height: 49px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 5px 14px rgba(23, 107, 80, 0.15);
+}
+
+.btn-primary:active {
+    transform: scale(0.99);
+}
+
+.btn-primary span {
+    font-size: 19px;
+    line-height: 1;
+}
+
+
+/* =========================
+   16. DIVIDER
+========================= */
+
+.form-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 26px 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.form-divider span {
+    color: #9aa59f;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   17. SWITCH AUTH
+========================= */
+
+.switch-auth {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.switch-auth .text-link {
+    font-size: 13px;
+    margin-left: 3px;
+}
+
+
+/* =========================
+   18. SECURITY NOTE
+========================= */
+
+.security-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #87948d;
+    font-size: 11px;
+    margin-top: 32px;
+    text-align: center;
+}
+
+.security-note span {
+    display: grid;
+    place-items: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    color: var(--primary);
+    background: var(--primary-light);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   19. RESPONSIVE: TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .auth-layout {
+        grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .brand-panel {
+        padding: 35px 7%;
+    }
+
+    .form-panel {
+        padding: 35px 6%;
+    }
+
+    .brand-stats {
+        gap: 13px;
+    }
+
+    .brand-content h1 {
+        font-size: 39px;
+    }
+
+}
+
+
+/* =========================
+   20. RESPONSIVE: MOBILE
+========================= */
+
+@media (max-width: 760px) {
+
+    .auth-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-panel {
+        display: none;
+    }
+
+    .form-panel {
+        min-height: 100vh;
+        padding: 25px 22px 35px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .mobile-logo {
+        display: flex;
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+        
+        
+     
+    }
+
+    .mobile-logo .logo {
+        justify-content: center;
+    }
+
+    .mobile-logo .logo-icon {
+        width: 165px;
+        height: 70px;
+    }
+
+    .auth-form-container {
+        margin: 0 auto;
+        max-width: 460px;
+    }
+
+    .form-heading h2 {
+        font-size: 27px;
+    }
+
+    .register-container {
+        padding: 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 21px;
+    }
+
+    .brand-footer {
+        display: none;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .form-panel {
+        padding: 22px 16px 30px;
+    }
+
+    .mobile-logo {
+        margin-bottom: 40px;
+    }
+
+    .form-heading h2 {
+        font-size: 24px;
+    }
+
+    .label-row {
+        align-items: flex-start;
+    }
+
+    .label-row .text-link {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================
+   JAVASCRIPT FEEDBACK
+========================= */
+
+.auth-feedback {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.auth-feedback[hidden] {
+    display: none;
+}
+
+.auth-feedback.info {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+    border-color: #cfe2d8;
+}
+
+.auth-feedback.error {
+    color: #a12c2c;
+    background: #fff5f5;
+    border-color: #f0caca;
+}
+
+.password-toggle {
+    align-self: flex-end;
+    margin-top: -5px;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.password-toggle:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 3px;
+}

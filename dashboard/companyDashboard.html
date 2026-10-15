@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your company's Looply marketplace activity, listings, and business requests.">
+    <meta name="theme-color" content="#f7f9f8">
+    <title>Company Dashboard | Looply</title>
+
+    <link rel="icon" href="../images/FAVICON.png">
+    <link rel="stylesheet" href="../shared/companyLayout.css">
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+<body>
+    <div class="app-layout">
+        <div id="company-sidebar-slot"></div>
+
+        <main class="main-area">
+            <div id="company-header-slot"></div>
+
+            <div class="dashboard-content">
+                <!-- PREVIEW NOTICE -->
+                <div class="preview-notice" id="preview-notice" hidden>
+                    <span aria-hidden="true">ⓘ</span>
+                    Preview mode: sample information is being displayed because no
+                    signed-in company account was found.
+                </div>
+
+                <!-- WELCOME -->
+                <section class="welcome-section">
+                    <div>
+                        <div class="welcome-eyebrow">
+                            <span class="status-dot"></span>
+                            YOUR BUSINESS AT A GLANCE
+                        </div>
+
+                        <h1>Good morning, <span id="welcome-company">GreenTech Solutions</span> 👋</h1>
+
+                        <p>
+                            Here's what's happening with your business today.
+                            Let's make your surplus work harder.
+                        </p>
+                    </div>
+
+                    <button class="btn btn-primary" type="button" data-page="createListing">
+                        <span aria-hidden="true">＋</span>
+                        Add New Listing
+                    </button>
+                </section>
+
+                <!-- STATISTICS -->
+                <section class="stats-grid" aria-label="Business statistics">
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon green-icon" aria-hidden="true">▤</span>
+                            <span class="stat-trend" id="listing-trend">Your inventory</span>
+                        </div>
+                        <p class="stat-label">Active Listings</p>
+                        <div class="stat-value" id="active-listings">0</div>
+                        <p class="stat-foot">Products currently active</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon purple-icon" aria-hidden="true">◉</span>
+                            <span class="stat-trend">Marketplace</span>
+                        </div>
+                        <p class="stat-label">Total Views</p>
+                        <div class="stat-value" id="total-views">0</div>
+                        <p class="stat-foot">Views across your listings</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon orange-icon" aria-hidden="true">▧</span>
+                            <span class="stat-trend" id="quote-trend">Incoming</span>
+                        </div>
+                        <p class="stat-label">Quote Requests</p>
+                        <div class="stat-value" id="quote-requests">0</div>
+                        <p class="stat-foot">Requests awaiting your attention</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon blue-icon" aria-hidden="true">⇄</span>
+                            <span class="stat-trend">Business activity</span>
+                        </div>
+                        <p class="stat-label">Completed Deals</p>
+                        <div class="stat-value" id="completed-deals">0</div>
+                        <p class="stat-foot">Successfully completed deals</p>
+                    </article>
+                </section>
+
+                <!-- MAIN GRID -->
+                <div class="dashboard-grid">
+                    <!-- RECENT LISTINGS -->
+                    <section class="panel listings-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Recent Listings</h2>
+                                <p>Keep track of your surplus inventory.</p>
+                            </div>
+
+                            <button class="text-link" type="button" data-page="myListings">
+                                View all <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+
+                        <div class="table-scroll">
+                            <table class="listings-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Views</th>
+                                        <th scope="col">Updated</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-listings-body">
+                                    <tr>
+                                        <td colspan="4" class="loading-cell">Loading listings...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="empty-state" id="listings-empty" hidden>
+                            <div class="empty-state-icon" aria-hidden="true">▤</div>
+                            <h3>Your listings will appear here</h3>
+                            <p>Start by adding products or materials your company no longer needs.</p>
+                            <button class="btn btn-primary btn-small" type="button" data-page="createListing">
+                                Add your first listing
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- QUICK ACTIONS -->
+                    <section class="panel quick-actions-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Quick Actions</h2>
+                                <p>Get things done faster.</p>
+                            </div>
+                        </div>
+
+                        <div class="quick-actions">
+                            <button class="quick-action" type="button" data-page="createListing">
+                                <span class="quick-action-icon quick-green">＋</span>
+                                <span class="quick-action-text">
+                                    <strong>Add a listing</strong>
+                                    <span>Put surplus inventory up for sale.</span>
+                                </span>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                            <button class="quick-action" type="button" data-page="quoteRequests">
+                                <span class="quick-action-icon quick-orange">▧</span>
+                                <span class="quick-action-text">
+                                    <strong>Review quote requests</strong>
+                                    <span>Respond to interested businesses.</span>
+                                </span>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                            <button class="quick-action" type="button" data-page="companyProfile">
+                                <span class="quick-action-icon quick-purple">▣</span>
+                                <span class="quick-action-text">
+                                    <strong>Update company profile</strong>
+                                    <span>Keep your business details current.</span>
+                                </span>
+                                <span class="action-arrow">→</span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- COMPANY SETUP -->
+                    <section class="panel setup-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Company profile</h2>
+                                <p>Build trust with other businesses.</p>
+                            </div>
+                            <span class="setup-icon" aria-hidden="true">✳</span>
+                        </div>
+
+                        <div class="setup-progress-row">
+                            <strong id="profile-progress-text">0% complete</strong>
+                            <span id="profile-progress-hint">Getting started</span>
+                        </div>
+
+                        <div
+                            class="setup-progress-track"
+                            id="profile-progress-bar"
+                            role="progressbar"
+                            aria-label="Company profile completion"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="0"
+                        >
+                            <div class="setup-progress-fill" id="profile-progress-fill"></div>
+                        </div>
+
+                        <p class="setup-description" id="profile-progress-description">
+                            Complete your company details to build a stronger business profile.
+                        </p>
+
+                        <button class="text-link setup-link" type="button" data-page="companyProfile">
+                            Complete profile <span aria-hidden="true">→</span>
+                        </button>
+                    </section>
+
+                    <!-- RECENT ACTIVITY -->
+                    <section class="panel activity-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Recent Activity</h2>
+                                <p>Your latest company updates.</p>
+                            </div>
+                        </div>
+
+                        <div class="activity-list" id="activity-list">
+                            <div class="activity-empty">
+                                Your recent activity will appear here as you use Looply.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+            </div>
+            <div id="company-footer-slot"></div>
+        </main>
+    </div>
+
+    <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="../js/constants.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../shared/companyLayout.js" defer></script>
+    <script src="companyDashboard.js" defer></script>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

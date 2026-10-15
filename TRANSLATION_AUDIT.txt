@@ -1,0 +1,419 @@
+Unmapped static English strings (requires editorial review):
+loadingPage/loding.html: html
+loadingPage/loding.html: BUY
+loadingPage/loding.html: SELL
+loadingPage/loding.html: REUSE
+loadingPage/loding.html: © 2026 Looply. Built for businesses.
+listings/myListings.html: html
+listings/myListings.html: 0 products
+listings/myListings.html: Showing 0 of 0 products
+listings/edit-listing.html: html
+listings/createListing.html: html
+listings/createListing.html: Complete the details to create your listing.
+listings/createListing.html: * Required
+listings/createListing.html: Describe what your business offers.
+listings/createListing.html: Use a clear title buyers can understand.
+listings/createListing.html: Product description
+listings/createListing.html: Include specifications and any relevant details.
+listings/createListing.html: Help buyers understand your offer.
+listings/createListing.html: Unit
+listings/createListing.html: Price per unit (JOD)
+listings/createListing.html: JOD
+listings/createListing.html: Enter 0 if the item is free.
+listings/createListing.html: Optional; uses the same unit.
+listings/createListing.html: Tell buyers where the product is located.
+listings/createListing.html: A clear image can help buyers understand your offer.
+listings/createListing.html: Click to upload an image
+listings/createListing.html: PNG, JPG or WEBP · Maximum 5 MB
+listings/createListing.html: Remove image
+listings/createListing.html: Optional. Images are stored in this browser for the demo.
+listings/createListing.html: Create listing
+listings/createListing.html: This demo stores listings locally in your browser. They are not published to a remote marketplace.
+listings/createListing.html: LIVE PREVIEW
+listings/createListing.html: Your listing
+listings/createListing.html: Your product image will appear here
+listings/createListing.html: L
+listings/createListing.html: Your company
+listings/createListing.html: Your listing title
+listings/createListing.html: Your product description will appear here.
+listings/createListing.html: JOD 0.00
+listings/createListing.html: per unit
+listings/createListing.html: Make your listing stand out
+listings/createListing.html: Use a descriptive title, accurate quantities, and a clear product description.
+listings/createListing.html: © 2026 Looply
+messages/messages.html: html
+messages/messages.html: C
+messages/messages.html: Business conversation
+messages/messages.html: DISCUSSING LISTING
+messages/messages.html: Your message
+messages/messages.html: Send ↗
+messages/messages.html: Find a registered company by name, industry, or city. Select it to start a conversation.
+messages/messages.html: Close
+shared/companyFooter.html: Looply
+shared/companyFooter.html: Turning business surplus into opportunity.
+shared/companyFooter.html: Looply. All rights reserved.
+shared/companyHeader.html: ⌘ K
+shared/companyHeader.html: GT
+shared/companyHeader.html: GreenTech Solutions
+shared/companySidebar.html: GT
+shared/companySidebar.html: GreenTech Solutions
+orders/orders.html: html
+notifications/notifications.html: html
+notifications/notifications.html: YOUR BUSINESS ACTIVITY
+login&register/forgot-password.html: html
+login&register/forgot-password.html: YOUR BUSINESS. NEW OPPORTUNITIES.
+login&register/forgot-password.html: Every opportunity
+login&register/forgot-password.html: starts with a connection.
+login&register/forgot-password.html: Get back to your Looply account and continue discovering business opportunities, valuable resources, and new connections.
+login&register/forgot-password.html: Your business journey continues here.
+login&register/forgot-password.html: One account connects you to new possibilities.
+login&register/forgot-password.html: © 2026 Looply
+login&register/forgot-password.html: ACCOUNT RECOVERY
+login&register/forgot-password.html: No worries. Enter the business email associated with your account and we'll help you reset your password.
+login&register/forgot-password.html: Use the email address you registered with.
+login&register/forgot-password.html: NEED HELP?
+login&register/forgot-password.html: If you still have trouble accessing your account, contact our support team.
+login&register/forgot-password.html: Remember your password?
+login&register/login.html: html
+login&register/login.html: SMARTER B2B COMMERCE
+login&register/login.html: Connect with businesses, discover valuable resources, and turn unused inventory into new opportunities.
+login&register/login.html: List surplus
+login&register/login.html: Find buyers
+login&register/login.html: Make deals
+login&register/login.html: © 2026 Looply
+login&register/login.html: WELCOME BACK
+login&register/login.html: Forgot password?
+login&register/login.html: Remember me
+login&register/login.html: OR
+login&register/login.html: Don't have an account?
+login&register/login.html: Create an account
+login&register/login.html: A professional marketplace built for businesses.
+login&register/register.html: html
+login&register/register.html: YOUR BUSINESS. NEW OPPORTUNITIES.
+login&register/register.html: Make more
+login&register/register.html: from
+login&register/register.html: what you have.
+login&register/register.html: Join a smarter business marketplace where surplus resources meet real demand.
+login&register/register.html: Reach more businesses
+login&register/register.html: Make your surplus visible to potential buyers.
+login&register/register.html: Discover better opportunities
+login&register/register.html: Find products and materials your business needs.
+login&register/register.html: Start building connections
+login&register/register.html: Request quotes and negotiate directly.
+login&register/register.html: © 2026 Looply
+login&register/register.html: GET STARTED
+login&register/register.html: Set up your business account to get started.
+login&register/register.html: Logistics
+login&register/register.html: Select location
+login&register/register.html: Amman
+login&register/register.html: Zarqa
+login&register/register.html: Irbid
+login&register/register.html: Aqaba
+login&register/register.html: Use at least 8 characters.
+login&register/register.html: I agree to the
+login&register/register.html: Terms of Service
+login&register/register.html: and
+login&register/register.html: Privacy Policy
+login&register/register.html: Create account
+login&register/register.html: Already have an account?
+landingPage/index.html: html
+landingPage/index.html: A smarter way to trade surplus.
+landingPage/index.html: Discover how it works
+landingPage/index.html: THE SMARTER B2B MARKETPLACE
+landingPage/index.html: What you don't need
+landingPage/index.html: could be
+landingPage/index.html: what someone else
+landingPage/index.html: needs.
+landingPage/index.html: Turn unused inventory into new opportunities. Discover a smarter way for businesses to buy, sell, and reuse surplus resources.
+landingPage/index.html: Start Selling
+landingPage/index.html: Built for businesses
+landingPage/index.html: Trade smarter. Waste less.
+landingPage/index.html: Give surplus value
+landingPage/index.html: Make resources count
+landingPage/index.html: DISCOVER OPPORTUNITIES
+landingPage/index.html: Available resources
+landingPage/index.html: What does your business need?
+landingPage/index.html: ⌘ K
+landingPage/index.html: All items
+landingPage/index.html: Materials
+landingPage/index.html: PACKAGING
+landingPage/index.html: Industrial Carton Boxes
+landingPage/index.html: Amman, Jordan
+landingPage/index.html: Bulk quantity
+landingPage/index.html: MATERIALS
+landingPage/index.html: Surplus Industrial Stock
+landingPage/index.html: Jordan · Business seller
+landingPage/index.html: Request a quote
+landingPage/index.html: Every resource has another opportunity.
+landingPage/index.html: B
+landingPage/index.html: F
+landingPage/index.html: Better connections
+landingPage/index.html: Businesses working smarter
+landingPage/index.html: ONE MARKETPLACE. MORE POSSIBILITIES.
+landingPage/index.html: See how Looply works
+landingPage/index.html: Unlock value
+landingPage/index.html: Put surplus resources to work.
+landingPage/index.html: Find opportunities
+landingPage/index.html: Discover resources for your business.
+landingPage/index.html: Build connections
+landingPage/index.html: Connect with other businesses.
+landingPage/index.html: Reuse resources
+landingPage/index.html: Make better use of what exists.
+landingPage/index.html: A BETTER WAY FORWARD
+landingPage/index.html: Surplus shouldn't mean
+landingPage/index.html: wasted potential.
+landingPage/index.html: Businesses often have useful resources sitting unused, while other businesses are searching for exactly what is already available.
+landingPage/index.html: Discover the Looply approach
+landingPage/index.html: THE CHALLENGE
+landingPage/index.html: Useful resources go unnoticed.
+landingPage/index.html: Extra inventory can occupy storage space, lose value, and remain difficult to sell.
+landingPage/index.html: THE LOOPLY APPROACH
+landingPage/index.html: Connect supply with demand.
+landingPage/index.html: Give businesses a place to discover surplus, request prices, and negotiate directly.
+landingPage/index.html: SIMPLE BY DESIGN
+landingPage/index.html: From surplus to
+landingPage/index.html: A clearer process for businesses to find resources and turn unused inventory into value.
+landingPage/index.html: List your surplus
+landingPage/index.html: Add your available products, materials, or equipment to the marketplace.
+landingPage/index.html: Discover resources
+landingPage/index.html: Explore listings and find items that match your business needs.
+landingPage/index.html: Request & negotiate
+landingPage/index.html: Request a quote, compare offers, and discuss suitable terms.
+landingPage/index.html: Agree on a deal
+landingPage/index.html: Record the accepted offer and follow the progress of your agreement.
+landingPage/index.html: EXPLORE THE POSSIBILITIES
+landingPage/index.html: Resources for
+landingPage/index.html: every business.
+landingPage/index.html: Explore the kinds of surplus resources businesses can discover on Looply.
+landingPage/index.html: 01 / BUSINESS SUPPLIES
+landingPage/index.html: Boxes, cartons, and packaging supplies.
+landingPage/index.html: 02 / BUILDING
+landingPage/index.html: Building supplies and unused materials.
+landingPage/index.html: 03 / PRODUCTION
+landingPage/index.html: Industrial Supplies
+landingPage/index.html: Equipment, parts, and industrial stock.
+landingPage/index.html: 04 / MATERIALS
+landingPage/index.html: Available materials ready for new use.
+landingPage/index.html: Categories shown are examples. Available listings depend on marketplace inventory.
+landingPage/index.html: SMARTER LISTINGS
+landingPage/index.html: Listing your surplus,
+landingPage/index.html: made simpler.
+landingPage/index.html: Meet the Looply AI Listing Assistant. Turn a short product description into a clearer, more professional listing in less time.
+landingPage/index.html: Suggested product titles
+landingPage/index.html: Relevant category suggestions
+landingPage/index.html: Clearer product descriptions
+landingPage/index.html: Editable keywords and suggestions
+landingPage/index.html: Get Started
+landingPage/index.html: You stay in control. Review and approve every suggestion.
+landingPage/index.html: Looply AI
+landingPage/index.html: Listing Assistant
+landingPage/index.html: Concept preview
+landingPage/index.html: YOUR PRODUCT
+landingPage/index.html: We have extra packaging boxes available.
+landingPage/index.html: ✦ Generate example
+landingPage/index.html: SAMPLE SUGGESTION
+landingPage/index.html: T
+landingPage/index.html: Suggested title
+landingPage/index.html: Surplus Packaging Boxes
+landingPage/index.html: Suggested category
+landingPage/index.html: Description suggestion
+landingPage/index.html: Packaging boxes available for business use. Confirm the quantity, dimensions, and condition before publishing.
+landingPage/index.html: Illustrative demo only — not connected to an AI service.
+landingPage/index.html: WHY LOOPLY?
+landingPage/index.html: Better for your business.
+landingPage/index.html: Smarter for resources.
+landingPage/index.html: One platform designed to make surplus trading more organized and accessible.
+landingPage/index.html: Unlock commercial value
+landingPage/index.html: Give unused inventory another chance to generate value for your business.
+landingPage/index.html: Discover relevant resources
+landingPage/index.html: Explore business listings in one place instead of searching across scattered channels.
+landingPage/index.html: Organize negotiations
+landingPage/index.html: Manage quote requests, offers, counteroffers, and deals through a clearer process.
+landingPage/index.html: Make better use of resources
+landingPage/index.html: Help useful products and materials find another business that can use them.
+landingPage/index.html: YOUR NEXT OPPORTUNITY STARTS HERE
+landingPage/index.html: There's more value
+landingPage/index.html: in the loop.
+landingPage/index.html: Whether you're looking to sell surplus or discover useful resources, your next business connection starts with Looply.
+landingPage/index.html: Create Business Account
+landingPage/index.html: GOOD TO KNOW
+landingPage/index.html: Questions?
+landingPage/index.html: Let's clear things up.
+landingPage/index.html: A few things to know before your business gets started.
+landingPage/index.html: Still have a question? Contact us
+landingPage/index.html: What is Looply?
+landingPage/index.html: Looply is a B2B marketplace designed to connect businesses that have surplus products, materials, or equipment with businesses that need them.
+landingPage/index.html: Who can use Looply?
+landingPage/index.html: The platform is intended for businesses such as manufacturers, wholesalers, suppliers, construction companies, and other commercial buyers and sellers.
+landingPage/index.html: Can my business buy and sell?
+landingPage/index.html: Yes. A business can use the same account to discover resources and publish its own listings.
+landingPage/index.html: How do prices and negotiations work?
+landingPage/index.html: Buyers can request a quote. Sellers can respond with offers, and both parties can negotiate terms before agreeing on a deal.
+landingPage/index.html: Does Looply process payments or deliveries?
+landingPage/index.html: The initial version organizes listings, quote requests, offers, and deals. Integrated payments and automatic delivery tracking are outside its initial scope.
+landingPage/index.html: How does the AI Listing Assistant work?
+landingPage/index.html: It is designed to suggest titles, categories, descriptions, and keywords. Businesses review and edit these suggestions before publishing.
+landingPage/index.html: LET'S CONNECT
+landingPage/index.html: Have a question about Looply?
+landingPage/index.html: We're building a smarter way for businesses to exchange surplus resources.
+landingPage/index.html: Get in Touch
+landingPage/index.html: Turn surplus into opportunity. A smarter way for businesses to buy, sell, and reuse.
+landingPage/index.html: BUY. SELL. REUSE.
+landingPage/index.html: Explore
+landingPage/index.html: About Us
+landingPage/index.html: For Businesses
+landingPage/index.html: Create Account
+landingPage/index.html: List Surplus
+landingPage/index.html: Discover Resources
+landingPage/index.html: Information
+landingPage/index.html: FAQs
+landingPage/index.html: Terms & Privacy
+landingPage/index.html: Looply. All rights reserved.
+landingPage/index.html: Back to top ↑
+landingPage/index.html: JavaScript is disabled. The main content is available, but some interactive features may not work.
+quotes/quote-requests.html: html
+quotes/quote-requests.html: + Request a Quote
+quotes/quote-requests.html: From potential buyers
+quotes/quote-requests.html: To suppliers
+quotes/quote-requests.html: Awaiting Response
+quotes/quote-requests.html: Needs attention
+quotes/quote-requests.html: Agreed quotations
+quotes/quote-requests.html: Search requests
+quotes/quote-requests.html: Filter status
+quotes/quote-requests.html: Quoted
+quotes/quote-requests.html: Cancelled
+quotes/quote-requests.html: Request / Listing
+quotes/quote-requests.html: Action
+quotes/quote-requests.html: No quote requests found
+quotes/quote-requests.html: Requests will appear here when a company submits one.
+quotes/quote-requests.html: Explore available listings
+quotes/quote-requests.html: Demo workspace: requests are saved in this browser. Real-time delivery between devices requires a backend.
+quotes/quote-requests.html: B2B PROCUREMENT
+quotes/quote-requests.html: Choose an available listing from another company and specify what you need.
+quotes/quote-requests.html: Available listing
+quotes/quote-requests.html: Choose a listing
+quotes/quote-requests.html: Delivery preference
+quotes/quote-requests.html: Additional details
+quotes/quote-requests.html: Send Request
+dashboard/companyDashboard.html: html
+dashboard/companyDashboard.html: YOUR BUSINESS AT A GLANCE
+dashboard/companyDashboard.html: Good morning,
+dashboard/companyDashboard.html: GreenTech Solutions
+dashboard/companyDashboard.html: Here's what's happening with your business today. Let's make your surplus work harder.
+dashboard/companyDashboard.html: Products currently active
+dashboard/companyDashboard.html: Views across your listings
+dashboard/companyDashboard.html: Incoming
+dashboard/companyDashboard.html: Requests awaiting your attention
+dashboard/companyDashboard.html: Business activity
+dashboard/companyDashboard.html: Completed Deals
+dashboard/companyDashboard.html: Successfully completed deals
+dashboard/companyDashboard.html: Recent Listings
+dashboard/companyDashboard.html: Keep track of your surplus inventory.
+dashboard/companyDashboard.html: Views
+dashboard/companyDashboard.html: Loading listings...
+dashboard/companyDashboard.html: Your listings will appear here
+dashboard/companyDashboard.html: Start by adding products or materials your company no longer needs.
+dashboard/companyDashboard.html: Add your first listing
+dashboard/companyDashboard.html: Quick Actions
+dashboard/companyDashboard.html: Get things done faster.
+dashboard/companyDashboard.html: Add a listing
+dashboard/companyDashboard.html: Put surplus inventory up for sale.
+dashboard/companyDashboard.html: Review quote requests
+dashboard/companyDashboard.html: Respond to interested businesses.
+dashboard/companyDashboard.html: Update company profile
+dashboard/companyDashboard.html: Keep your business details current.
+dashboard/companyDashboard.html: Build trust with other businesses.
+dashboard/companyDashboard.html: 0% complete
+dashboard/companyDashboard.html: Getting started
+dashboard/companyDashboard.html: Complete your company details to build a stronger business profile.
+dashboard/companyDashboard.html: Complete profile
+dashboard/companyDashboard.html: Recent Activity
+dashboard/companyDashboard.html: Your latest company updates.
+dashboard/companyDashboard.html: Your recent activity will appear here as you use Looply.
+companyProfile/settings.html: html
+companyProfile/settings.html: WORKSPACE / SETTINGS
+companyProfile/settings.html: /1200 characters
+companyProfile/settings.html: JOD — Jordanian Dinar
+companyProfile/settings.html: USD — US Dollar
+companyProfile/settings.html: EUR — Euro
+companyProfile/companyProfile.html: html
+companyProfile/companyProfile.html: LC
+companyProfile/companyProfile.html: Your Company
+companyProfile/companyProfile.html: Industry not specified
+companyProfile/companyProfile.html: Location not specified
+companyProfile/companyProfile.html: Company size not specified
+companyProfile/companyProfile.html: Basic details about your organization.
+companyProfile/companyProfile.html: Optional
+companyProfile/companyProfile.html: Tell other businesses what you do and what you handle.
+companyProfile/companyProfile.html: Your role
+companyProfile/companyProfile.html: Main category
+companyProfile/companyProfile.html: About your company
+companyProfile/companyProfile.html: How your company uses Looply.
+companyProfile/companyProfile.html: Source materials and products from other businesses.
+companyProfile/companyProfile.html: Turn excess inventory into business opportunities.
+company/company.html: html
+company/company.html: C
+company/company.html: Registered company · Verification not available
+company/company.html: Average rating
+company/company.html: Member since
+company/company.html: Business type
+company/company.html: Available listings
+company/company.html: Ratings & reviews
+company/company.html: Reviews are linked to completed transactions. A company cannot review itself.
+companies/companies.html: html
+companies/companies.html: Connect with businesses, explore their surplus listings, and build new partnerships.
+companies/companies.html: Name A–Z
+companies/companies.html: Highest rated
+companies/companies.html: Most listings
+companies/companies.html: Loading companies…
+companies/companies.html: Try a different search or clear the filters.
+deals/deals.html: html
+deals/deals.html: LOOPLY BUSINESS
+deals/deals.html: Track accepted quotations and purchase requests, complete transactions, and review business partners.
+deals/deals.html: Choose a rating
+deals/deals.html: 5 — Excellent
+deals/deals.html: 4 — Good
+deals/deals.html: 3 — Average
+deals/deals.html: 2 — Poor
+deals/deals.html: 1 — Very poor
+deals/deals.html: Your experience
+deals/deals.html: Submit review
+marketplace/marketplace.html: html
+marketplace/marketplace.html: + List your surplus
+marketplace/marketplace.html: BUY · SELL · REUSE
+marketplace/marketplace.html: Loading listings…
+companyOnboarding/companyOnboarding.html: html
+companyOnboarding/companyOnboarding.html: Exit setup
+companyOnboarding/companyOnboarding.html: WELCOME TO LOOPLY
+companyOnboarding/companyOnboarding.html: Let's set up your company
+companyOnboarding/companyOnboarding.html: Tell us about your business so you can get the most out of your B2B surplus marketplace experience.
+companyOnboarding/companyOnboarding.html: Step 1 of 3
+companyOnboarding/companyOnboarding.html: Let's start with the basics about your business.
+companyOnboarding/companyOnboarding.html: Company name *
+companyOnboarding/companyOnboarding.html: Industry *
+companyOnboarding/companyOnboarding.html: Company size *
+companyOnboarding/companyOnboarding.html: (Optional)
+companyOnboarding/companyOnboarding.html: Your business profile
+companyOnboarding/companyOnboarding.html: Help other businesses understand what you do.
+companyOnboarding/companyOnboarding.html: Your role in the company *
+companyOnboarding/companyOnboarding.html: About your company *
+companyOnboarding/companyOnboarding.html: Write a short description of your business.
+companyOnboarding/companyOnboarding.html: What products or materials do you handle?
+companyOnboarding/companyOnboarding.html: What brings you to Looply?
+companyOnboarding/companyOnboarding.html: Select how your company wants to use the marketplace.
+companyOnboarding/companyOnboarding.html: Choose your business goals *
+companyOnboarding/companyOnboarding.html: Find products and materials at competitive prices.
+companyOnboarding/companyOnboarding.html: Turn unused inventory into new business opportunities.
+companyOnboarding/companyOnboarding.html: Both buying and selling
+companyOnboarding/companyOnboarding.html: Buy what you need and sell what you no longer use.
+companyOnboarding/companyOnboarding.html: You can review your company details before completing setup. Your information will be saved in this browser for this demo.
+companyOnboarding/companyOnboarding.html: Complete setup
+companyOnboarding/companyOnboarding.html: Need help?
+companyOnboarding/companyOnboarding.html: Contact support
+products/product-details.html: html
+products/product-details.html: LOOPLY SURPLUS MARKETPLACE
+products/product-details.html: Delivery / pickup preferences (optional)
+products/product-details.html: Additional notes (optional)
+products/product-details.html: My Orders
+products/product-details.html: View Company Profile
+products/product-details.html: About this listing

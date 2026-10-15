@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Manage business notifications on Looply.">
+<title>Notifications | Looply</title>
+<link rel="icon" href="../images/FAVICON.png">
+<link rel="stylesheet" href="../shared/companyLayout.css">
+<link rel="stylesheet" href="notifications.css">
+<script src="../js/constants.js" defer></script>
+<script src="../js/storage.js" defer></script>
+<script src="../js/auth.js" defer></script>
+<script src="../js/navigation.js" defer></script>
+<script src="../shared/companyLayout.js" defer></script>
+<script src="notifications.js" defer></script>
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+<body>
+<div class="app-layout">
+<div id="company-sidebar-slot"></div>
+<main class="main-area">
+<div id="company-header-slot"></div>
+<div class="notifications-page">
+<div class="notifications-heading"><div><p class="eyebrow">YOUR BUSINESS ACTIVITY</p><h1>Notifications</h1><p>Stay informed about messages, quotations, orders and deals.</p></div><button id="mark-all" class="notifications-button" type="button">Mark all as read</button></div>
+<div class="notifications-toolbar"><div class="notifications-tabs" role="group" aria-label="Filter notifications"><button class="is-active" data-filter="all" type="button">All <span id="all-count">0</span></button><button data-filter="unread" type="button">Unread <span id="unread-count">0</span></button></div><select id="notification-type" aria-label="Notification type"><option value="all">All activity</option><option value="messages">Messages</option><option value="quotes">Quote requests</option><option value="orders">Purchase orders</option><option value="deals">Deals</option><option value="reviews">Reviews</option></select></div>
+<div id="notifications-list" class="notifications-list" aria-live="polite"></div>
+<p id="notifications-feedback" class="notifications-feedback" role="status" hidden></p>
+</div>
+<div id="company-footer-slot"></div>
+</main>
+</div>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+
+/* ===== General Styles ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0F5132;
+    --secondary: #1E7A5B;
+    --light-green: #A7D3C2;
+    --background: #F3F7F5;
+    --text: #17352D;
+    --muted: #71847D;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ===== Main Container ===== */
+
+.loading-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft background circles */
+
+.loading-container::before,
+.loading-container::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(30, 122, 91, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.loading-container::before {
+    width: 450px;
+    height: 450px;
+    top: -220px;
+    right: -150px;
+}
+
+.loading-container::after {
+    width: 350px;
+    height: 350px;
+    bottom: -200px;
+    left: -130px;
+}
+
+/* ===== Logo ===== */
+
+.logo {
+    display: flex;
+    width: 250px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 75px;
+}
+
+.logo-icon {
+    width: 250px;
+    height: 150px;
+    
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+/* ===== Loading Animation ===== */
+
+.loader {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.loader-circle {
+    width: 90px;
+    height: 90px;
+    border: 5px solid #DCEBE4;
+    border-top-color: var(--primary);
+    border-right-color: var(--secondary);
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+.loader-arrow {
+    position: absolute;
+    font-size: 55px;
+    color: var(--secondary);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ===== Text ===== */
+
+h2 {
+    font-size: clamp(24px, 4vw, 34px);
+    margin-bottom: 15px;
+    letter-spacing: -0.7px;
+}
+
+.description {
+    max-width: 420px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ===== Loading Status ===== */
+
+.loading-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 35px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--secondary);
+    border-radius: 50%;
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+/* ===== Progress Bar ===== */
+
+.progress-bar {
+    width: 220px;
+    height: 5px;
+    background: #DCEBE4;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress {
+    width: 35%;
+    height: 100%;
+    background: var(--secondary);
+    border-radius: 10px;
+    animation: progress 2s ease-in-out infinite;
+}
+
+/* ===== Footer ===== */
+
+footer {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+footer p {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--primary);
+}
+
+footer p span {
+    color: var(--secondary);
+}
+
+footer small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ===== Animations ===== */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+}
+
+@keyframes progress {
+    0% {
+        width: 5%;
+        transform: translateX(0);
+    }
+
+    50% {
+        width: 65%;
+        transform: translateX(45px);
+    }
+
+    100% {
+        width: 5%;
+        transform: translateX(220px);
+    }
+}
+
+/* ===== Mobile Responsive ===== */
+
+@media (max-width: 600px) {
+    .logo {
+        margin-bottom: 60px;
+    }
+
+    .logo h1 {
+        font-size: 30px;
+    }
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 14px;
+        max-width: 320px;
+    }
+
+    footer {
+        bottom: 20px;
+    }
+}
+
+/* Respect reduced motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+

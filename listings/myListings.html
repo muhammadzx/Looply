@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage, search, and organize your company's Looply product listings.">
+    <meta name="theme-color" content="#f7f9f8">
+
+    <title>My Listings | Looply</title>
+
+    <link rel="icon" href="../images/FAVICON.png">
+    <link rel="stylesheet" href="../shared/companyLayout.css">
+    <link rel="stylesheet" href="myListings.css">
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+
+<body>
+    <div class="app-layout">
+        <!-- SHARED COMPANY SIDEBAR -->
+        <div id="company-sidebar-slot"></div>
+
+        <main class="main-area">
+            <!-- SHARED COMPANY HEADER -->
+            <div id="company-header-slot"></div>
+
+            <div class="my-listings-content">
+
+                <!-- PREVIEW NOTICE -->
+                <div class="preview-notice" id="preview-notice" hidden>
+                    <span aria-hidden="true">ⓘ</span>
+                    Preview mode: sample information is being displayed
+                    because no signed-in company account was found.
+                </div>
+
+                <!-- PAGE HEADER -->
+                <section class="my-listings-heading">
+                    <div>
+                        <div class="my-listings-eyebrow">
+                            <span class="my-listings-status-dot"></span>
+                            INVENTORY MANAGEMENT
+                        </div>
+
+                        <h1>My Listings</h1>
+
+                        <p>
+                            Manage your company's surplus products,
+                            track their status, and keep your inventory up to date.
+                        </p>
+                    </div>
+
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-page="createListing"
+                    >
+                        <span aria-hidden="true">＋</span>
+                        Add New Listing
+                    </button>
+                </section>
+
+                <!-- SUMMARY CARDS -->
+                <section class="my-listings-stats" aria-label="Listing statistics">
+
+                    <article class="my-listings-stat-card">
+                        <div class="my-listings-stat-icon listings-icon-total"
+                             aria-hidden="true">▤</div>
+
+                        <div>
+                            <p>Total Listings</p>
+                            <strong id="total-listings">0</strong>
+                            <span>All your products</span>
+                        </div>
+                    </article>
+
+                    <article class="my-listings-stat-card">
+                        <div class="my-listings-stat-icon listings-icon-active"
+                             aria-hidden="true">✓</div>
+
+                        <div>
+                            <p>Active</p>
+                            <strong id="active-listings">0</strong>
+                            <span>Currently available</span>
+                        </div>
+                    </article>
+
+                    <article class="my-listings-stat-card">
+                        <div class="my-listings-stat-icon listings-icon-draft"
+                             aria-hidden="true">◷</div>
+
+                        <div>
+                            <p>Drafts</p>
+                            <strong id="draft-listings">0</strong>
+                            <span>Not yet published</span>
+                        </div>
+                    </article>
+
+                    <article class="my-listings-stat-card">
+                        <div class="my-listings-stat-icon listings-icon-inactive"
+                             aria-hidden="true">Ⅱ</div>
+
+                        <div>
+                            <p>Inactive</p>
+                            <strong id="inactive-listings">0</strong>
+                            <span>Paused or unavailable</span>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- LISTINGS PANEL -->
+                <section class="my-listings-panel">
+
+                    <div class="my-listings-panel-header">
+                        <div>
+                            <h2>Your Inventory</h2>
+                            <p>Search and manage the products your company has listed.</p>
+                        </div>
+
+                        <span class="my-listings-count" id="visible-listings-count">
+                            0 products
+                        </span>
+                    </div>
+
+                    <!-- SEARCH AND FILTERS -->
+                    <div class="my-listings-toolbar">
+
+                        <div class="my-listings-search">
+                            <span aria-hidden="true">⌕</span>
+
+                            <input
+                                type="search"
+                                id="listing-search"
+                                placeholder="Search by product name..."
+                                aria-label="Search listings by product name"
+                            >
+
+                            <button
+                                type="button"
+                                id="clear-search"
+                                class="clear-search-btn"
+                                aria-label="Clear search"
+                                hidden
+                            >
+                                ×
+                            </button>
+                        </div>
+
+                        <div class="my-listings-filters">
+                            <label for="listing-status-filter">Status</label>
+
+                            <select id="listing-status-filter">
+                                <option value="all">All statuses</option>
+                                <option value="active">Active</option>
+                                <option value="draft">Draft</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+
+                        <div class="my-listings-filters">
+                            <label for="listing-sort">Sort by</label>
+
+                            <select id="listing-sort">
+                                <option value="newest">Newest first</option>
+                                <option value="oldest">Oldest first</option>
+                                <option value="name-asc">Name: A to Z</option>
+                                <option value="name-desc">Name: Z to A</option>
+                                <option value="price-low">Price: Low to high</option>
+                                <option value="price-high">Price: High to low</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- STATUS TABS -->
+                    <div class="my-listings-tabs" role="group" aria-label="Filter listings by status">
+                        <button
+                            type="button"
+                            class="listing-tab active"
+                            data-status="all"
+                            aria-pressed="true"
+                        >
+                            All Listings
+                            <span id="tab-count-all">0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="listing-tab"
+                            data-status="active"
+                            aria-pressed="false"
+                        >
+                            Active
+                            <span id="tab-count-active">0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="listing-tab"
+                            data-status="draft"
+                            aria-pressed="false"
+                        >
+                            Drafts
+                            <span id="tab-count-draft">0</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="listing-tab"
+                            data-status="inactive"
+                            aria-pressed="false"
+                        >
+                            Inactive
+                            <span id="tab-count-inactive">0</span>
+                        </button>
+                    </div>
+
+                    <!-- LOADING STATE -->
+                    <div class="listings-loading" id="listings-loading">
+                        <span class="listings-spinner" aria-hidden="true"></span>
+                        <p>Loading your listings...</p>
+                    </div>
+
+                    <!-- PRODUCTS TABLE -->
+                    <div class="my-listings-table-scroll" id="listings-table-container" hidden>
+                        <table class="my-listings-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Last Updated</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="my-listings-body"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- EMPTY STATE -->
+                    <div class="my-listings-empty" id="listings-empty" hidden>
+                        <div class="my-listings-empty-icon" aria-hidden="true">▤</div>
+
+                        <h3 id="empty-state-title">No listings yet</h3>
+
+                        <p id="empty-state-description">
+                            Start listing your surplus products to connect
+                            with other businesses on Looply.
+                        </p>
+
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            id="empty-state-add-btn"
+                            data-page="createListing"
+                        >
+                            <span aria-hidden="true">＋</span>
+                            Create Your First Listing
+                        </button>
+                    </div>
+
+                    <!-- ERROR STATE -->
+                    <div class="my-listings-error" id="listings-error" hidden>
+                        <h3>Unable to load your listings</h3>
+                        <p id="listings-error-message">
+                            Something went wrong while loading your inventory.
+                        </p>
+
+                        <button
+                            class="btn btn-primary btn-small"
+                            type="button"
+                            id="retry-load-listings"
+                        >
+                            Try Again
+                        </button>
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div class="my-listings-pagination" id="listings-pagination" hidden>
+                        <p id="pagination-info">Showing 0 of 0 products</p>
+
+                        <div class="pagination-controls">
+                            <button
+                                type="button"
+                                id="previous-page"
+                                aria-label="Previous page"
+                                disabled
+                            >
+                                ← Previous
+                            </button>
+
+                            <span id="pagination-current">1 / 1</span>
+
+                            <button
+                                type="button"
+                                id="next-page"
+                                aria-label="Next page"
+                                disabled
+                            >
+                                Next →
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+
+               
+
+            </div>
+             <div id="company-footer-slot"></div>
+        </main>
+    </div>
+
+    <!-- SHARED TOAST CONTAINER -->
+    <div
+        class="toast-container"
+        id="toast-container"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <!-- SHARED SCRIPTS -->
+    <script src="../js/constants.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../shared/companyLayout.js" defer></script>
+
+    <!-- PAGE SCRIPT -->
+    <script src="myListings.js" defer></script>
+<script src="../shared/uiPreferences.js"></script>
+</body>
+</html>

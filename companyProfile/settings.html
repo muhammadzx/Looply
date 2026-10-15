@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0F5132">
+<title>Settings | Looply</title>
+<link rel="icon" href="../images/FAVICON.png">
+<link rel="stylesheet" href="../shared/companyLayout.css">
+<link rel="stylesheet" href="settings.css">
+<link rel="stylesheet" href="../shared/uiPreferences.css">
+<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+</head>
+<body>
+<div class="app-layout">
+<div id="company-sidebar-slot"></div>
+<main class="main-area">
+<div id="company-header-slot"></div>
+<div class="ls-settings">
+<header class="ls-heading"><div><span class="ls-eyebrow">WORKSPACE / SETTINGS</span><h1>Account Settings</h1><p>Manage your company profile, security, and preferences.</p></div></header>
+<div id="ls-notice" class="ls-notice" role="status" aria-live="polite" hidden></div>
+<div class="ls-grid">
+<nav class="ls-nav" aria-label="Settings sections">
+<a href="#company-section">Company information</a><a href="#security-section">Password & security</a><a href="#preferences-section">Preferences</a>
+</nav>
+<div class="ls-sections">
+<section class="ls-card" id="company-section">
+<div class="ls-section-title"><div><h2>Company information</h2><p>Details other businesses may see on Looply.</p></div><span class="ls-icon">▣</span></div>
+<form id="ls-company-form">
+<div class="ls-fields">
+<label>Company name <input id="ls-name" maxlength="100" required autocomplete="organization"></label>
+<label>Email address <input id="ls-email" type="email" disabled></label>
+<label>Industry <input id="ls-industry" maxlength="100" placeholder="e.g. Manufacturing"></label>
+<label>City <input id="ls-city" maxlength="100" placeholder="e.g. Amman"></label>
+<label>Country <input id="ls-country" maxlength="100" placeholder="e.g. Jordan"></label>
+<label>Company size <input id="ls-size" maxlength="80" placeholder="e.g. 11–50 employees"></label>
+<label class="ls-wide">Website <input id="ls-website" type="url" maxlength="250" placeholder="https://example.com"></label>
+<label class="ls-wide">Company description <textarea id="ls-description" maxlength="1200" rows="5" placeholder="Tell other companies about your business"></textarea><small><span id="ls-description-count">0</span>/1200 characters</small></label>
+</div>
+<div class="ls-actions"><button class="ls-button" type="submit">Save company details</button></div>
+</form></section>
+<section class="ls-card" id="security-section">
+<div class="ls-section-title"><div><h2>Password & security</h2><p>Change your demo account password.</p></div><span class="ls-icon">♧</span></div>
+<form id="ls-password-form">
+<div class="ls-fields">
+<label class="ls-wide">Current password <input id="ls-old-password" type="password" required autocomplete="current-password"></label>
+<label>New password <input id="ls-new-password" type="password" required minlength="8" autocomplete="new-password"></label>
+<label>Confirm new password <input id="ls-confirm-password" type="password" required minlength="8" autocomplete="new-password"></label>
+</div>
+<p class="ls-hint">Use at least 8 characters. Passwords are not stored in plain text.</p>
+<div class="ls-actions"><button class="ls-button" type="submit">Update password</button></div>
+</form></section>
+<section class="ls-card" id="preferences-section">
+<div class="ls-section-title"><div><h2>Preferences</h2><p>Saved for this account in this browser.</p></div><span class="ls-icon">⚙</span></div>
+<form id="ls-preferences-form">
+<div class="ls-fields">
+<label>Preferred currency <select id="ls-currency"><option value="JOD">JOD — Jordanian Dinar</option><option value="USD">USD — US Dollar</option><option value="EUR">EUR — Euro</option></select></label>
+<label>Interface language <select id="ls-language" data-looply-language><option value="en">English</option><option value="ar">العربية</option></select></label>
+<label>Appearance <select id="ls-theme" data-looply-theme><option value="light">Light</option><option value="dark">Dark</option><option value="system">System</option></select></label>
+</div>
+<div class="ls-checks">
+<label><input type="checkbox" id="ls-notify-messages"> Notify me about new messages</label>
+<label><input type="checkbox" id="ls-notify-quotes"> Notify me about quote requests</label>
+<label><input type="checkbox" id="ls-notify-orders"> Notify me about purchase orders and deals</label>
+</div>
+<p class="ls-hint">Notification switches store your preferences. Other pages must read these preferences to apply them. Language and theme update the interface immediately. Some dynamically generated text may remain in English.</p>
+<div class="ls-actions"><button class="ls-button" type="submit">Save preferences</button></div>
+</form></section>
+</div></div>
+</div>
+<div id="company-footer-slot"></div>
+</main></div>
+<script src="../js/constants.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../shared/companyLayout.js"></script>
+<script src="settings.js"></script>
+<script src="../shared/uiPreferences.js"></script>
+</body></html>
