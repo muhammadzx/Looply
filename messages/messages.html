@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Looply business messaging: discuss surplus listings and negotiate with other companies.">
+  <meta name="description"
+    content="Looply business messaging: discuss surplus listings and negotiate with other companies.">
   <title>Messages | Looply</title>
   <link rel="icon" href="../images/FAVICON.png">
   <link rel="stylesheet" href="../shared/companyLayout.css">
@@ -14,31 +16,57 @@
   <script src="../js/navigation.js" defer></script>
   <script src="../shared/companyLayout.js" defer></script>
   <script src="messages.js" defer></script>
-<link rel="stylesheet" href="../shared/uiPreferences.css">
-<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../shared/uiPreferences.css">
+  <script>try { const s = JSON.parse(localStorage.getItem('looply_ui_preferences') || '{}'); document.documentElement.lang = s.language === 'ar' ? 'ar' : 'en'; document.documentElement.dir = s.language === 'ar' ? 'rtl' : 'ltr'; document.documentElement.dataset.theme = s.theme === 'dark' || (s.theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch (e) { }</script>
 </head>
+
 <body>
   <div id="company-sidebar-slot"></div>
   <div class="messages-page-shell">
     <div id="company-header-slot"></div>
     <main class="messages-main" id="main-content">
       <div class="messages-heading">
-        <div><p class="messages-eyebrow">BUSINESS COMMUNICATION</p><h1>Messages</h1><p>Connect with companies and discuss surplus opportunities.</p></div>
-        <button id="new-conversation-btn" class="messages-btn messages-btn-primary" type="button">+ New conversation</button>
+        <div>
+          <p class="messages-eyebrow">BUSINESS COMMUNICATION</p>
+          <h1>Messages</h1>
+          <p>Connect with companies and discuss surplus opportunities.</p>
+        </div>
+        <button id="new-conversation-btn" class="messages-btn messages-btn-primary" type="button">+ New
+          conversation</button>
       </div>
       <section class="messages-app" aria-label="Business conversations">
         <aside class="messages-conversations" aria-label="Conversation list">
-          <div class="messages-list-head"><h2>Conversations <span id="conversation-count">0</span></h2><label class="messages-search"><span aria-hidden="true">⌕</span><input id="conversation-search" type="search" placeholder="Search companies or products" aria-label="Search conversations"></label></div>
+          <div class="messages-list-head">
+            <h2>Conversations <span id="conversation-count">0</span></h2><label class="messages-search"><span
+                aria-hidden="true">⌕</span><input id="conversation-search" type="search"
+                placeholder="Search companies or products" aria-label="Search conversations"></label>
+          </div>
           <div id="conversation-list" class="messages-conversation-list"></div>
-          <p id="conversation-list-empty" class="messages-empty-list" hidden>No conversations yet. Start by contacting a seller.</p>
+          <p id="conversation-list-empty" class="messages-empty-list" hidden>No conversations yet. Start by contacting a
+            seller.</p>
         </aside>
         <section class="messages-chat" aria-label="Chat">
-          <div id="chat-placeholder" class="messages-chat-placeholder"><div class="messages-placeholder-icon" aria-hidden="true">✉</div><h2>Your conversations, all in one place</h2><p>Select a conversation or start a new one to discuss a listing.</p></div>
+          <div id="chat-placeholder" class="messages-chat-placeholder">
+            <div class="messages-placeholder-icon" aria-hidden="true">✉</div>
+            <h2>Your conversations, all in one place</h2>
+            <p>Select a conversation or start a new one to discuss a listing.</p>
+          </div>
           <div id="chat-content" class="messages-chat-content" hidden>
-            <header class="messages-chat-header"><button id="back-to-conversations" class="messages-back" type="button" aria-label="Back to conversations">←</button><div class="messages-company-avatar" id="chat-avatar">C</div><div class="messages-chat-identity"><strong id="chat-company">Company</strong><span id="chat-subtitle">Business conversation</span></div></header>
-            <div id="chat-product" class="messages-product" hidden><div><small>DISCUSSING LISTING</small><strong id="chat-product-title"></strong></div><span aria-hidden="true">↗</span></div>
+            <header class="messages-chat-header"><button id="back-to-conversations" class="messages-back" type="button"
+                aria-label="Back to conversations">←</button>
+              <div class="messages-company-avatar" id="chat-avatar">C</div>
+              <div class="messages-chat-identity"><strong id="chat-company">Company</strong><span
+                  id="chat-subtitle">Business conversation</span></div>
+            </header>
+            <div id="chat-product" class="messages-product" hidden>
+              <div><small>DISCUSSING LISTING</small><strong id="chat-product-title"></strong></div><span
+                aria-hidden="true">↗</span>
+            </div>
             <div id="chat-messages" class="messages-thread" role="log" aria-live="polite" aria-label="Messages"></div>
-            <form id="message-form" class="messages-compose"><label for="message-input" class="sr-only">Your message</label><textarea id="message-input" rows="1" maxlength="2000" placeholder="Write a message..." required></textarea><button class="messages-btn messages-btn-primary" id="send-message" type="submit">Send ↗</button></form>
+            <form id="message-form" class="messages-compose"><label for="message-input" class="sr-only">Your
+                message</label><textarea id="message-input" rows="1" maxlength="2000" placeholder="Write a message..."
+                required></textarea><button class="messages-btn messages-btn-primary" id="send-message"
+                type="submit">Send ↗</button></form>
           </div>
         </section>
       </section>
@@ -46,7 +74,26 @@
     </main>
     <div id="company-footer-slot"></div>
   </div>
-  <dialog id="new-conversation-dialog" class="messages-dialog"><form id="new-conversation-form"><div class="messages-dialog-top"><h2>New conversation</h2><button type="button" id="close-dialog" aria-label="Close">×</button></div><p>Find a registered company by name, industry, or city. Select it to start a conversation.</p><label for="company-directory-search">Search companies</label><input id="company-directory-search" type="search" placeholder="Company name, industry or city" autocomplete="off"><label for="company-directory-industry">Industry</label><select id="company-directory-industry"><option value="">All industries</option></select><label for="company-directory-city">City</label><select id="company-directory-city"><option value="">All cities</option></select><p id="company-directory-count" class="directory-count" aria-live="polite"></p><div id="company-directory-results" class="directory-results" role="list"></div><div class="messages-dialog-actions"><button class="messages-btn messages-btn-secondary" type="button" id="cancel-dialog">Close</button></div></form></dialog>
-<script src="../shared/uiPreferences.js"></script>
+  <dialog id="new-conversation-dialog" class="messages-dialog">
+    <form id="new-conversation-form">
+      <div class="messages-dialog-top">
+        <h2>New conversation</h2><button type="button" id="close-dialog" aria-label="Close">×</button>
+      </div>
+      <p>Find a registered company by name, industry, or city. Select it to start a conversation.</p><label
+        for="company-directory-search">Search companies</label><input id="company-directory-search" type="search"
+        placeholder="Company name, industry or city" autocomplete="off"><label
+        for="company-directory-industry">Industry</label><select id="company-directory-industry">
+        <option value="">All industries</option>
+      </select><label for="company-directory-city">City</label><select id="company-directory-city">
+        <option value="">All cities</option>
+      </select>
+      <p id="company-directory-count" class="directory-count" aria-live="polite"></p>
+      <div id="company-directory-results" class="directory-results" role="list"></div>
+      <div class="messages-dialog-actions"><button class="messages-btn messages-btn-secondary" type="button"
+          id="cancel-dialog">Close</button></div>
+    </form>
+  </dialog>
+  <script src="../shared/uiPreferences.js"></script>
 </body>
+
 </html>

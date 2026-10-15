@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manage your company's Looply marketplace activity, listings, and business requests.">
+    <meta name="description"
+        content="Manage your company's Looply marketplace activity, listings, and business requests.">
     <meta name="theme-color" content="#f7f9f8">
     <title>Company Dashboard | Looply</title>
 
     <link rel="icon" href="../images/FAVICON.png">
     <link rel="stylesheet" href="../shared/companyLayout.css">
-<link rel="stylesheet" href="../shared/uiPreferences.css">
-<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+    <link rel="stylesheet" href="../shared/uiPreferences.css">
+    <script>try { const s = JSON.parse(localStorage.getItem('looply_ui_preferences') || '{}'); document.documentElement.lang = s.language === 'ar' ? 'ar' : 'en'; document.documentElement.dir = s.language === 'ar' ? 'rtl' : 'ltr'; document.documentElement.dataset.theme = s.theme === 'dark' || (s.theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch (e) { }</script>
 </head>
+
 <body>
     <div class="app-layout">
         <div id="company-sidebar-slot"></div>
@@ -189,15 +192,9 @@
                             <span id="profile-progress-hint">Getting started</span>
                         </div>
 
-                        <div
-                            class="setup-progress-track"
-                            id="profile-progress-bar"
-                            role="progressbar"
-                            aria-label="Company profile completion"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                            aria-valuenow="0"
-                        >
+                        <div class="setup-progress-track" id="profile-progress-bar" role="progressbar"
+                            aria-label="Company profile completion" aria-valuemin="0" aria-valuemax="100"
+                            aria-valuenow="0">
                             <div class="setup-progress-fill" id="profile-progress-fill"></div>
                         </div>
 
@@ -226,7 +223,7 @@
                         </div>
                     </section>
                 </div>
-                
+
             </div>
             <div id="company-footer-slot"></div>
         </main>
@@ -240,6 +237,7 @@
     <script src="../js/navigation.js" defer></script>
     <script src="../shared/companyLayout.js" defer></script>
     <script src="companyDashboard.js" defer></script>
-<script src="../shared/uiPreferences.js"></script>
+    <script src="../shared/uiPreferences.js"></script>
 </body>
+
 </html>

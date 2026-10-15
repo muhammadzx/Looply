@@ -439,8 +439,7 @@ document.addEventListener("looply:layout-ready", () => {
             const status = document.createElement("span");
 
             status.className =
-                `status-pill ${
-                    STATUS_CLASSES[product.status] || "status-draft"
+                `status-pill ${STATUS_CLASSES[product.status] || "status-draft"
                 }`;
 
             status.textContent =
@@ -598,8 +597,7 @@ document.addEventListener("looply:layout-ready", () => {
 
                 const description = document.createElement("p");
                 description.textContent =
-                    `Current status: ${
-                        STATUS_LABELS[product.status] || "Draft"
+                    `Current status: ${STATUS_LABELS[product.status] || "Draft"
                     }`;
 
                 const time = document.createElement("span");
@@ -618,7 +616,7 @@ document.addEventListener("looply:layout-ready", () => {
         // PAGE NAVIGATION
         // =========================
 
-        
+
         // =========================
         // PAGE NAVIGATION
         // =========================
@@ -631,7 +629,7 @@ document.addEventListener("looply:layout-ready", () => {
         };
 
         const futurePages = new Set([
-            
+
         ]);
 
         function handlePageNavigation(page) {
@@ -705,7 +703,7 @@ document.addEventListener("looply:layout-ready", () => {
         // =========================
 
         function initializeDashboard() {
-            
+
 
             initializeUser();
             loadListings();

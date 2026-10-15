@@ -1,4 +1,40 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Purchase Orders | Looply</title><link rel="icon" href="../images/FAVICON.png"><link rel="stylesheet" href="../shared/companyLayout.css"><link rel="stylesheet" href="orders.css"><script defer src="../js/constants.js"></script><script defer src="../js/storage.js"></script><script defer src="../js/auth.js"></script><script defer src="../js/navigation.js"></script><script defer src="../shared/companyLayout.js"></script><script defer src="orders.js"></script><link rel="stylesheet" href="../shared/uiPreferences.css">
-<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
-</head><body><div class="page-shell"><div id="company-sidebar-slot"></div><main class="main-content"><div id="company-header-slot"></div><div class="content-container orders-page"><h1>Purchase Orders</h1><p>Track direct purchase requests. A request is not a completed purchase or payment.</p><div class="order-tabs"><button type="button" data-view="received" class="active">Received</button><button type="button" data-view="sent">Sent</button></div><p id="orders-feedback" role="status" hidden></p><div id="orders-list"></div></div><div id="company-footer-slot"></div></main></div><script src="../shared/uiPreferences.js"></script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Purchase Orders | Looply</title>
+    <link rel="icon" href="../images/FAVICON.png">
+    <link rel="stylesheet" href="../shared/companyLayout.css">
+    <link rel="stylesheet" href="orders.css">
+    <script defer src="../js/constants.js"></script>
+    <script defer src="../js/storage.js"></script>
+    <script defer src="../js/auth.js"></script>
+    <script defer src="../js/navigation.js"></script>
+    <script defer src="../shared/companyLayout.js"></script>
+    <script defer src="orders.js"></script>
+    <link rel="stylesheet" href="../shared/uiPreferences.css">
+    <script>try { const s = JSON.parse(localStorage.getItem('looply_ui_preferences') || '{}'); document.documentElement.lang = s.language === 'ar' ? 'ar' : 'en'; document.documentElement.dir = s.language === 'ar' ? 'rtl' : 'ltr'; document.documentElement.dataset.theme = s.theme === 'dark' || (s.theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch (e) { }</script>
+</head>
+
+<body>
+    <div class="page-shell">
+        <div id="company-sidebar-slot"></div>
+        <main class="main-content">
+            <div id="company-header-slot"></div>
+            <div class="content-container orders-page">
+                <h1>Purchase Orders</h1>
+                <p>Track direct purchase requests. A request is not a completed purchase or payment.</p>
+                <div class="order-tabs"><button type="button" data-view="received"
+                        class="active">Received</button><button type="button" data-view="sent">Sent</button></div>
+                <p id="orders-feedback" role="status" hidden></p>
+                <div id="orders-list"></div>
+            </div>
+            <div id="company-footer-slot"></div>
+        </main>
+    </div>
+    <script src="../shared/uiPreferences.js"></script>
+</body>
+
+</html>

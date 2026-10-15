@@ -116,7 +116,7 @@
 }
 
 /* Footer stays at the bottom of short pages */
-.page-shell > .main-content {
+.page-shell>.main-content {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -148,7 +148,7 @@
 
 
 
-.dashboard-footer > div {
+.dashboard-footer>div {
     display: flex;
     flex-wrap: wrap;
     gap: 17px;
@@ -157,25 +157,74 @@
 .company-footer-links a:hover {
     color: var(--green-700);
 }
-/* Hide the Messages badge completely when no unread messages exist. */
-#messages-nav-count[hidden] { display: none !important; }
 
-#notifications-nav-count[hidden] { display: none !important; }
+/* Hide the Messages badge completely when no unread messages exist. */
+#messages-nav-count[hidden] {
+    display: none !important;
+}
+
+#notifications-nav-count[hidden] {
+    display: none !important;
+}
 
 /* Layout stabilization: both app-layout/main-area and page-shell/main-content */
-:root { --looply-sidebar-size: var(--sidebar-width, 252px); }
-.app-layout, .page-shell { min-height:100vh; }
-.main-area, .main-content, .messages-page-shell {
-  box-sizing:border-box; min-width:0;
+:root {
+    --looply-sidebar-size: var(--sidebar-width, 252px);
 }
-.main-area, .main-content { display:flex;flex-direction:column; }
-.main-area > #company-footer-slot, .main-content > #company-footer-slot { margin-top:auto;width:100%; }
-#company-footer-slot .company-footer { width:100%; }
+
+.app-layout,
+.page-shell {
+    min-height: 100vh;
+}
+
+.main-area,
+.main-content,
+.messages-page-shell {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.main-area,
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-area>#company-footer-slot,
+.main-content>#company-footer-slot {
+    margin-top: auto;
+    width: 100%;
+}
+
+#company-footer-slot .company-footer {
+    width: 100%;
+}
+
 @media(min-width:721px) {
-  .main-area { margin-left:var(--looply-sidebar-size);margin-right:0; }
-  .main-content { margin-left:var(--looply-sidebar-size);margin-right:0;width:auto; }
-  .messages-page-shell { margin-left:var(--looply-sidebar-size);margin-right:0; }
+    .main-area {
+        margin-left: var(--looply-sidebar-size);
+        margin-right: 0;
+    }
+
+    .main-content {
+        margin-left: var(--looply-sidebar-size);
+        margin-right: 0;
+        width: auto;
+    }
+
+    .messages-page-shell {
+        margin-left: var(--looply-sidebar-size);
+        margin-right: 0;
+    }
 }
+
 @media(max-width:720px) {
-  .main-area,.main-content,.messages-page-shell {margin-left:0!important;margin-right:0!important;width:100%!important;}
+
+    .main-area,
+    .main-content,
+    .messages-page-shell {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
 }

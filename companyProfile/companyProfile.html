@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
   <link rel="icon" href="../images/FAVICON.png" type="image/png">
   <link rel="stylesheet" href="../shared/companyLayout.css">
   <link rel="stylesheet" href="companyProfile.css">
-<link rel="stylesheet" href="../shared/uiPreferences.css">
-<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../shared/uiPreferences.css">
+  <script>try { const s = JSON.parse(localStorage.getItem('looply_ui_preferences') || '{}'); document.documentElement.lang = s.language === 'ar' ? 'ar' : 'en'; document.documentElement.dir = s.language === 'ar' ? 'rtl' : 'ltr'; document.documentElement.dataset.theme = s.theme === 'dark' || (s.theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch (e) { }</script>
 </head>
+
 <body>
   <div class="page-shell">
     <div id="company-sidebar-slot"></div>
@@ -46,12 +48,16 @@
         <form id="company-profile-form" novalidate>
           <section class="profile-card">
             <div class="profile-section-heading">
-              <div><h2>Company information</h2><p>Basic details about your organization.</p></div>
+              <div>
+                <h2>Company information</h2>
+                <p>Basic details about your organization.</p>
+              </div>
             </div>
             <div class="profile-form-grid">
               <div class="profile-field profile-field-full">
                 <label for="company-name">Company name <span aria-hidden="true">*</span></label>
-                <input id="company-name" name="companyName" maxlength="100" autocomplete="organization" required disabled>
+                <input id="company-name" name="companyName" maxlength="100" autocomplete="organization" required
+                  disabled>
                 <small class="profile-field-error" id="company-name-error"></small>
               </div>
               <div class="profile-field">
@@ -102,14 +108,20 @@
               </div>
               <div class="profile-field profile-field-full">
                 <label for="website">Company website <span class="profile-optional">Optional</span></label>
-                <input id="website" name="website" type="url" maxlength="250" placeholder="https://yourcompany.com" autocomplete="url" disabled>
+                <input id="website" name="website" type="url" maxlength="250" placeholder="https://yourcompany.com"
+                  autocomplete="url" disabled>
                 <small class="profile-field-error" id="website-error"></small>
               </div>
             </div>
           </section>
 
           <section class="profile-card">
-            <div class="profile-section-heading"><div><h2>Business profile</h2><p>Tell other businesses what you do and what you handle.</p></div></div>
+            <div class="profile-section-heading">
+              <div>
+                <h2>Business profile</h2>
+                <p>Tell other businesses what you do and what you handle.</p>
+              </div>
+            </div>
             <div class="profile-form-grid">
               <div class="profile-field">
                 <label for="role">Your role <span aria-hidden="true">*</span></label>
@@ -140,7 +152,8 @@
               </div>
               <div class="profile-field profile-field-full">
                 <label for="description">About your company <span aria-hidden="true">*</span></label>
-                <textarea id="description" name="description" rows="5" minlength="20" maxlength="600" required disabled></textarea>
+                <textarea id="description" name="description" rows="5" minlength="20" maxlength="600" required
+                  disabled></textarea>
                 <div class="profile-description-count"><span id="description-count">0</span>/600</div>
                 <small class="profile-field-error" id="description-error"></small>
               </div>
@@ -148,11 +161,18 @@
           </section>
 
           <section class="profile-card">
-            <div class="profile-section-heading"><div><h2>Business goals</h2><p>How your company uses Looply.</p></div></div>
+            <div class="profile-section-heading">
+              <div>
+                <h2>Business goals</h2>
+                <p>How your company uses Looply.</p>
+              </div>
+            </div>
             <fieldset class="profile-goals" id="profile-goals" disabled>
               <legend class="profile-visually-hidden">Business goals</legend>
-              <label class="profile-goal"><input type="checkbox" name="goals" value="buy"><span><strong>Buy surplus</strong><small>Source materials and products from other businesses.</small></span></label>
-              <label class="profile-goal"><input type="checkbox" name="goals" value="sell"><span><strong>Sell surplus</strong><small>Turn excess inventory into business opportunities.</small></span></label>
+              <label class="profile-goal"><input type="checkbox" name="goals" value="buy"><span><strong>Buy
+                    surplus</strong><small>Source materials and products from other businesses.</small></span></label>
+              <label class="profile-goal"><input type="checkbox" name="goals" value="sell"><span><strong>Sell
+                    surplus</strong><small>Turn excess inventory into business opportunities.</small></span></label>
             </fieldset>
             <small class="profile-field-error" id="goals-error"></small>
           </section>
@@ -172,6 +192,7 @@
   <script src="../js/navigation.js" defer></script>
   <script src="../shared/companyLayout.js" defer></script>
   <script src="companyProfile.js" defer></script>
-<script src="../shared/uiPreferences.js"></script>
+  <script src="../shared/uiPreferences.js"></script>
 </body>
+
 </html>

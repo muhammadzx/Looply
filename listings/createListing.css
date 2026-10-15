@@ -1,4 +1,3 @@
-
 /* ==============================
    1. DESIGN TOKENS
 ================================= */
@@ -264,7 +263,7 @@ textarea:focus-visible {
     margin-bottom: 18px;
 }
 
-.form-section > .form-group:last-child,
+.form-section>.form-group:last-child,
 .form-row:last-child .form-group {
     margin-bottom: 0;
 }
@@ -277,7 +276,7 @@ textarea:focus-visible {
     font-weight: 750;
 }
 
-.form-group label > span {
+.form-group label>span {
     color: var(--danger);
 }
 
@@ -364,7 +363,7 @@ textarea:focus-visible {
     box-shadow: 0 0 0 3px rgba(22, 134, 107, 0.09);
 }
 
-.input-with-prefix > span {
+.input-with-prefix>span {
     padding: 0 10px;
     color: var(--text-secondary);
     font-size: 10px;
@@ -427,7 +426,7 @@ textarea:focus-visible {
     font-size: 12px;
 }
 
-.upload-area > span:last-child {
+.upload-area>span:last-child {
     margin-top: 5px;
     color: var(--text-muted);
     font-size: 10px;
@@ -595,7 +594,7 @@ textarea:focus-visible {
         #edf2ef;
 }
 
-.preview-image-wrap > img {
+.preview-image-wrap>img {
     display: block;
     width: 100%;
     height: 210px;
@@ -613,7 +612,7 @@ textarea:focus-visible {
     text-align: center;
 }
 
-.preview-image-placeholder > span {
+.preview-image-placeholder>span {
     display: grid;
     width: 52px;
     height: 52px;
@@ -718,7 +717,7 @@ textarea:focus-visible {
     border-top: 1px solid var(--border);
 }
 
-.preview-price > div {
+.preview-price>div {
     display: flex;
     flex-direction: column;
 }
@@ -729,7 +728,7 @@ textarea:focus-visible {
     font-weight: 800;
 }
 
-.preview-price > div > span {
+.preview-price>div>span {
     color: var(--text-muted);
     font-size: 10px;
 }
@@ -856,13 +855,13 @@ textarea:focus-visible {
     }
 
     .preview-image-wrap,
-    .preview-image-wrap > img,
+    .preview-image-wrap>img,
     .preview-image-placeholder {
         min-height: 190px;
         height: 190px;
     }
 
-    
+
 }
 
 @media (max-width: 480px) {
@@ -910,6 +909,7 @@ textarea:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {

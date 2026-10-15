@@ -21,7 +21,7 @@
   const getSeller = p => companies.get(ownerId(p))?.companyName || companies.get(ownerId(p))?.company || text(p.companyName || p.sellerCompany || p.sellerName) || "Business seller";
   const detailUrl = p => `../products/product-details.html?id=${encodeURIComponent(text(p.id ?? p.productId))}`;
   const companyUrl = p => `../company/company.html?id=${encodeURIComponent(ownerId(p))}`;
-  const money = value => Number.isFinite(Number(value)) && value !== "" && value != null ? `${Number(value).toLocaleString("en-JO", {maximumFractionDigits:2})} JOD` : "Request a quote";
+  const money = value => Number.isFinite(Number(value)) && value !== "" && value != null ? `${Number(value).toLocaleString("en-JO", { maximumFractionDigits: 2 })} JOD` : "Request a quote";
   function el(tag, className, content) { const node = document.createElement(tag); if (className) node.className = className; if (content !== undefined) node.textContent = content; return node; }
   function link(href, className, content) { const a = el("a", className, content); a.href = href; return a; }
   function load() {
@@ -34,7 +34,7 @@
   function fillSelect(id, values) {
     const select = $(id);
     const previous = select.value;
-    for (const value of [...new Set(values.map(text).filter(Boolean))].sort((a,b) => a.localeCompare(b))) {
+    for (const value of [...new Set(values.map(text).filter(Boolean))].sort((a, b) => a.localeCompare(b))) {
       const option = document.createElement("option"); option.value = value; option.textContent = value; select.appendChild(option);
     }
     if ([...select.options].some(o => o.value === previous)) select.value = previous;
@@ -55,15 +55,15 @@
       const price = Number(p.price);
       if (min !== "" && (!Number.isFinite(price) || price < Number(min))) return false;
       if (max !== "" && (!Number.isFinite(price) || price > Number(max))) return false;
-      if (search && ![getTitle(p),p.description,p.category,p.city,p.country,getSeller(p)].some(value => text(value).toLowerCase().includes(search))) return false;
+      if (search && ![getTitle(p), p.description, p.category, p.city, p.country, getSeller(p)].some(value => text(value).toLowerCase().includes(search))) return false;
       return true;
     });
     const sort = $("#sort-by").value;
-    result.sort((a,b) => {
-      if (sort === "price-low") return (Number(a.price)||0)-(Number(b.price)||0);
-      if (sort === "price-high") return (Number(b.price)||0)-(Number(a.price)||0);
+    result.sort((a, b) => {
+      if (sort === "price-low") return (Number(a.price) || 0) - (Number(b.price) || 0);
+      if (sort === "price-high") return (Number(b.price) || 0) - (Number(a.price) || 0);
       if (sort === "name") return getTitle(a).localeCompare(getTitle(b));
-      const diff = (Date.parse(b.createdAt || b.updatedAt) || 0)-(Date.parse(a.createdAt || a.updatedAt) || 0);
+      const diff = (Date.parse(b.createdAt || b.updatedAt) || 0) - (Date.parse(a.createdAt || a.updatedAt) || 0);
       return sort === "oldest" ? -diff : diff;
     });
     return result;
@@ -78,39 +78,39 @@
     } else imageLink.append(el("div", "listing-placeholder", "▤"));
     imageLink.append(el("span", "listing-tag", text(p.condition) || "Surplus listing"));
     const body = el("div", "listing-body");
-    body.append(el("div", "listing-category", text(p.category) || "Other"),link(detailUrl(p), "listing-title", getTitle(p)));
+    body.append(el("div", "listing-category", text(p.category) || "Other"), link(detailUrl(p), "listing-title", getTitle(p)));
     const price = el("div", "listing-price", money(p.price));
     if (p.price != null && p.price !== "") price.append(el("small", " / unit"));
     body.append(price);
     const meta = el("div", "listing-meta");
     meta.append(el("span", "", `▣ ${text(p.quantity) || "Ask"} ${text(p.unit) || "units"}`));
-    if (p.city || p.country) meta.append(el("span", "", `⌖ ${[p.city,p.country].map(text).filter(Boolean).join(", ")}`));
+    if (p.city || p.country) meta.append(el("span", "", `⌖ ${[p.city, p.country].map(text).filter(Boolean).join(", ")}`));
     body.append(meta);
     if (ownerId(p)) body.append(link(companyUrl(p), "seller-link", `⌂ ${getSeller(p)} →`));
     else body.append(el("div", "seller-link", `⌂ ${getSeller(p)}`));
     const actions = el("div", "listing-actions");
     actions.append(link(detailUrl(p), "action-primary", "View & Buy / Quote"));
     if (ownerId(p) && ownerId(p) !== text(currentUser?.id)) {
-      const params = new URLSearchParams({sellerId:ownerId(p),sellerName:getSeller(p),productId:text(p.id ?? p.productId),productTitle:getTitle(p)});
+      const params = new URLSearchParams({ sellerId: ownerId(p), sellerName: getSeller(p), productId: text(p.id ?? p.productId), productTitle: getTitle(p) });
       actions.append(link(`../messages/messages.html?${params}`, "action-secondary", "Message"));
     }
-    body.append(actions); card.append(imageLink,body); return card;
+    body.append(actions); card.append(imageLink, body); return card;
   }
   function render() {
     const matches = filters();
-    const totalPages = Math.max(1,Math.ceil(matches.length/pageSize));
-    page = Math.min(page,totalPages);
+    const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
+    page = Math.min(page, totalPages);
     $("#results-count").textContent = String(matches.length);
     $("#results-description").textContent = `${matches.length} available listing${matches.length === 1 ? "" : "s"}`;
     const grid = $("#market-grid");
-    grid.replaceChildren(...matches.slice((page-1)*pageSize,page*pageSize).map(createCard));
+    grid.replaceChildren(...matches.slice((page - 1) * pageSize, page * pageSize).map(createCard));
     $("#market-empty").hidden = matches.length !== 0;
     $("#page-label").textContent = matches.length ? `Page ${page} of ${totalPages}` : "";
     $("#prev-page").disabled = page <= 1 || !matches.length;
     $("#next-page").disabled = page >= totalPages || !matches.length;
   }
   function reset() {
-    for (const id of ["#market-search","#market-category","#market-condition","#market-city","#price-min","#price-max"]) $(id).value = "";
+    for (const id of ["#market-search", "#market-category", "#market-condition", "#market-city", "#price-min", "#price-max"]) $(id).value = "";
     $("#sort-by").value = "newest";
     $("#exclude-own").checked = true;
     page = 1; render();
@@ -120,15 +120,15 @@
     fillSelect("#market-category", listings.map(p => p.category));
     fillSelect("#market-condition", listings.map(p => p.condition));
     fillSelect("#market-city", listings.map(p => p.city));
-    for (const id of ["#market-search","#market-category","#market-condition","#market-city","#price-min","#price-max","#exclude-own","#sort-by"]) {
-      $(id).addEventListener(id === "#market-search" || id.startsWith("#price-") ? "input" : "change", () => {page = 1; render();});
+    for (const id of ["#market-search", "#market-category", "#market-condition", "#market-city", "#price-min", "#price-max", "#exclude-own", "#sort-by"]) {
+      $(id).addEventListener(id === "#market-search" || id.startsWith("#price-") ? "input" : "change", () => { page = 1; render(); });
     }
-    $("#reset-all").addEventListener("click",reset);
-    $("#empty-reset").addEventListener("click",reset);
-    $("#prev-page").addEventListener("click",() => {page--;render();window.scrollTo({top:0,behavior:"smooth"});});
-    $("#next-page").addEventListener("click",() => {page++;render();window.scrollTo({top:0,behavior:"smooth"});});
-    window.addEventListener("storage",event => { if ([window.LooplyConstants?.STORAGE_KEYS?.DEMO_PRODUCTS,accountsKey].includes(event.key)) {load();render();} });
+    $("#reset-all").addEventListener("click", reset);
+    $("#empty-reset").addEventListener("click", reset);
+    $("#prev-page").addEventListener("click", () => { page--; render(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+    $("#next-page").addEventListener("click", () => { page++; render(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+    window.addEventListener("storage", event => { if ([window.LooplyConstants?.STORAGE_KEYS?.DEMO_PRODUCTS, accountsKey].includes(event.key)) { load(); render(); } });
     render();
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded",initialize,{once:true}); else initialize();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialize, { once: true }); else initialize();
 })();

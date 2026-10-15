@@ -14,7 +14,7 @@
     notice.textContent = message;
     notice.classList.toggle("ls-error", isError);
     notice.hidden = false;
-    notice.scrollIntoView({behavior:"smooth", block:"nearest"});
+    notice.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
   function setValue(id, value) { $(id).value = String(value ?? ""); }
   function loadCompany() {
@@ -71,10 +71,10 @@
       showNotice("Password update failed. Please try again.", true);
     } finally { button.disabled = false; }
   });
-  const defaults = {currency:"JOD", language:"en", messages:true, quotes:true, orders:true};
+  const defaults = { currency: "JOD", language: "en", messages: true, quotes: true, orders: true };
   const stored = storage.getLocal(prefKey, {});
-  const prefs = {...defaults, ...(stored && typeof stored === "object" && !Array.isArray(stored) ? stored : {})};
-  $("ls-currency").value = ["JOD","USD","EUR"].includes(prefs.currency) ? prefs.currency : "JOD";
+  const prefs = { ...defaults, ...(stored && typeof stored === "object" && !Array.isArray(stored) ? stored : {}) };
+  $("ls-currency").value = ["JOD", "USD", "EUR"].includes(prefs.currency) ? prefs.currency : "JOD";
   $("ls-language").value = window.LooplyUI?.getLanguage?.() || "en";
   $("ls-notify-messages").checked = prefs.messages !== false;
   $("ls-notify-quotes").checked = prefs.quotes !== false;
@@ -91,7 +91,7 @@
     if (!storage.setLocal(prefKey, updated)) return showNotice("Could not save preferences.", true);
     window.LooplyUI?.setLanguage?.(updated.language);
     window.LooplyUI?.setTheme?.($("ls-theme").value);
-    document.dispatchEvent(new CustomEvent("looply:preferences-updated", {detail:updated}));
+    document.dispatchEvent(new CustomEvent("looply:preferences-updated", { detail: updated }));
     showNotice("Preferences saved. Other features will need to read these settings to apply them.");
   });
   loadCompany();

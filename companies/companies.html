@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Discover businesses and surplus suppliers on Looply.">
   <title>Companies | Looply</title>
   <link rel="icon" href="../images/FAVICON.png">
@@ -13,20 +15,62 @@
   <script defer src="../js/navigation.js"></script>
   <script defer src="../shared/companyLayout.js"></script>
   <script defer src="companies.js"></script>
-<link rel="stylesheet" href="../shared/uiPreferences.css">
-<script>try{const s=JSON.parse(localStorage.getItem('looply_ui_preferences')||'{}');document.documentElement.lang=s.language==='ar'?'ar':'en';document.documentElement.dir=s.language==='ar'?'rtl':'ltr';document.documentElement.dataset.theme=s.theme==='dark'||(s.theme==='system'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../shared/uiPreferences.css">
+  <script>try { const s = JSON.parse(localStorage.getItem('looply_ui_preferences') || '{}'); document.documentElement.lang = s.language === 'ar' ? 'ar' : 'en'; document.documentElement.dir = s.language === 'ar' ? 'rtl' : 'ltr'; document.documentElement.dataset.theme = s.theme === 'dark' || (s.theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light' } catch (e) { }</script>
 </head>
+
 <body>
-<div class="app-layout"><div id="company-sidebar-slot"></div><main class="main-area"><div id="company-header-slot"></div>
-<section class="companies-page" aria-labelledby="companies-heading">
-  <nav class="companies-breadcrumb"><a href="../dashboard/companyDashboard.html">Workspace</a> <span>/</span> Companies</nav>
-  <div class="companies-hero"><div><span class="companies-eyebrow">LOOPLY BUSINESS NETWORK</span><h1 id="companies-heading">Discover companies</h1><p>Connect with businesses, explore their surplus listings, and build new partnerships.</p></div><div class="companies-hero-symbol" aria-hidden="true">◎</div></div>
-  <div class="companies-stats"><div><strong id="companies-total">0</strong><span>Registered companies</span></div><div><strong id="companies-active">0</strong><span>Companies with listings</span></div><div><strong id="companies-listings">0</strong><span>Active listings</span></div></div>
-  <div class="companies-toolbar"><div class="companies-search"><label for="companies-search">Search companies</label><input id="companies-search" type="search" placeholder="Company name, industry, description…" autocomplete="off"></div><div><label for="companies-industry">Industry</label><select id="companies-industry"><option value="">All industries</option></select></div><div><label for="companies-city">City</label><select id="companies-city"><option value="">All cities</option></select></div><div><label for="companies-sort">Sort by</label><select id="companies-sort"><option value="name">Name A–Z</option><option value="rating">Highest rated</option><option value="listings">Most listings</option></select></div></div>
-  <div class="companies-results"><p id="companies-count" role="status" aria-live="polite">Loading companies…</p><button id="companies-reset" type="button">Clear filters</button></div>
-  <div id="companies-grid" class="companies-grid"></div>
-  <div id="companies-empty" class="companies-empty" hidden><h2>No companies found</h2><p>Try a different search or clear the filters.</p></div>
-  <div class="companies-pagination"><button id="companies-prev" type="button">← Previous</button><span id="companies-page-label"></span><button id="companies-next" type="button">Next →</button></div>
-</section><div id="company-footer-slot"></div></main></div>
-<script src="../shared/uiPreferences.js"></script>
-</body></html>
+  <div class="app-layout">
+    <div id="company-sidebar-slot"></div>
+    <main class="main-area">
+      <div id="company-header-slot"></div>
+      <section class="companies-page" aria-labelledby="companies-heading">
+        <nav class="companies-breadcrumb"><a href="../dashboard/companyDashboard.html">Workspace</a> <span>/</span>
+          Companies</nav>
+        <div class="companies-hero">
+          <div><span class="companies-eyebrow">LOOPLY BUSINESS NETWORK</span>
+            <h1 id="companies-heading">Discover companies</h1>
+            <p>Connect with businesses, explore their surplus listings, and build new partnerships.</p>
+          </div>
+          <div class="companies-hero-symbol" aria-hidden="true">◎</div>
+        </div>
+        <div class="companies-stats">
+          <div><strong id="companies-total">0</strong><span>Registered companies</span></div>
+          <div><strong id="companies-active">0</strong><span>Companies with listings</span></div>
+          <div><strong id="companies-listings">0</strong><span>Active listings</span></div>
+        </div>
+        <div class="companies-toolbar">
+          <div class="companies-search"><label for="companies-search">Search companies</label><input
+              id="companies-search" type="search" placeholder="Company name, industry, description…" autocomplete="off">
+          </div>
+          <div><label for="companies-industry">Industry</label><select id="companies-industry">
+              <option value="">All industries</option>
+            </select></div>
+          <div><label for="companies-city">City</label><select id="companies-city">
+              <option value="">All cities</option>
+            </select></div>
+          <div><label for="companies-sort">Sort by</label><select id="companies-sort">
+              <option value="name">Name A–Z</option>
+              <option value="rating">Highest rated</option>
+              <option value="listings">Most listings</option>
+            </select></div>
+        </div>
+        <div class="companies-results">
+          <p id="companies-count" role="status" aria-live="polite">Loading companies…</p><button id="companies-reset"
+            type="button">Clear filters</button>
+        </div>
+        <div id="companies-grid" class="companies-grid"></div>
+        <div id="companies-empty" class="companies-empty" hidden>
+          <h2>No companies found</h2>
+          <p>Try a different search or clear the filters.</p>
+        </div>
+        <div class="companies-pagination"><button id="companies-prev" type="button">← Previous</button><span
+            id="companies-page-label"></span><button id="companies-next" type="button">Next →</button></div>
+      </section>
+      <div id="company-footer-slot"></div>
+    </main>
+  </div>
+  <script src="../shared/uiPreferences.js"></script>
+</body>
+
+</html>

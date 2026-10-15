@@ -26,10 +26,10 @@ window.LooplyConstants = Object.freeze({
     }),
 
     SESSION_KEYS: Object.freeze({
-    CURRENT_USER: "looply_current_user_session",
-    TEMP_MESSAGE: "looply_temp_message",
-    ONBOARDING_PROGRESS: "looply_onboarding_progress"
-}),
+        CURRENT_USER: "looply_current_user_session",
+        TEMP_MESSAGE: "looply_temp_message",
+        ONBOARDING_PROGRESS: "looply_onboarding_progress"
+    }),
 
     COOKIE_NAMES: Object.freeze({
         CONSENT: "looply_cookie_consent"

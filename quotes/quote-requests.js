@@ -80,7 +80,7 @@
       const partnerId = state.direction === "received" ? r.buyerId : r.sellerId;
       const partnerName = state.direction === "received" ? r.buyerCompany : r.sellerCompany;
       if (partnerId) {
-        const companyLink = el("a",partnerName || "Company");
+        const companyLink = el("a", partnerName || "Company");
         companyLink.href = `../company/company.html?id=${encodeURIComponent(String(partnerId))}`;
         companyLink.className = "quote-company-link";
         company.append(companyLink);

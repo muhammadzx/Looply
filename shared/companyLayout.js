@@ -42,63 +42,63 @@
 
 
 
-function updateQuoteRequestsCounter() {
+    function updateQuoteRequestsCounter() {
 
-    const counter = document.getElementById("quote-nav-count");
-
-
-
-    if (!counter) return;
+        const counter = document.getElementById("quote-nav-count");
 
 
 
-    const user = window.LooplyAuth?.getCurrentUser?.();
-
-    const storage = window.LooplyStorage;
+        if (!counter) return;
 
 
 
-    if (!user?.id || !storage?.getLocal) {
+        const user = window.LooplyAuth?.getCurrentUser?.();
 
-        return;
+        const storage = window.LooplyStorage;
+
+
+
+        if (!user?.id || !storage?.getLocal) {
+
+            return;
+
+        }
+
+
+
+        const key =
+
+            window.LooplyConstants?.STORAGE_KEYS?.QUOTE_REQUESTS ||
+
+            "looply_quote_requests";
+
+
+
+        const savedRequests = storage.getLocal(key, []);
+
+
+
+        const requests = Array.isArray(savedRequests)
+
+            ? savedRequests
+
+            : [];
+
+
+
+        const count = requests.filter(request =>
+
+            String(request.sellerId) === String(user.id) &&
+
+            request.status === "pending"
+
+        ).length;
+
+
+
+        counter.textContent = String(count);
 
     }
-
-
-
-    const key =
-
-        window.LooplyConstants?.STORAGE_KEYS?.QUOTE_REQUESTS ||
-
-        "looply_quote_requests";
-
-
-
-    const savedRequests = storage.getLocal(key, []);
-
-
-
-    const requests = Array.isArray(savedRequests)
-
-        ? savedRequests
-
-        : [];
-
-
-
-    const count = requests.filter(request =>
-
-        String(request.sellerId) === String(user.id) &&
-
-        request.status === "pending"
-
-    ).length;
-
-
-
-    counter.textContent = String(count);
-
-}
 
 
 

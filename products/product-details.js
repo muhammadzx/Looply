@@ -20,7 +20,7 @@
     if (!productId) { showError("No product selected. Open a listing from a company profile."); return; }
     const products = storage?.getDemoProducts?.() || [];
     const product = (Array.isArray(products) ? products : []).find(item => str(item.id ?? item.productId) === productId);
-    if (!product || !["active","published"].includes(str(product.status).toLowerCase())) { showError("This listing is unavailable or is no longer active."); return; }
+    if (!product || !["active", "published"].includes(str(product.status).toLowerCase())) { showError("This listing is unavailable or is no longer active."); return; }
     const sellerId = ownerId(product);
     const key = window.LooplyConstants?.STORAGE_KEYS?.DEMO_ACCOUNTS || "looply_demo_accounts";
     const accounts = storage?.getLocal?.(key, []) || [];
@@ -45,7 +45,7 @@
     else { sellerLink.removeAttribute("href"); companyLink.hidden = true; }
     const contact = $("#product-message");
     if (!sellerId || sellerId === str(user.id)) contact.hidden = true;
-    else contact.href = `../messages/messages.html?${new URLSearchParams({sellerId,sellerName,productId,productTitle:title}).toString()}`;
+    else contact.href = `../messages/messages.html?${new URLSearchParams({ sellerId, sellerName, productId, productTitle: title }).toString()}`;
     const stock = Number(quantity);
     const minimum = Math.max(1, Number(product.minimumOrder) || 1);
     const priceNumber = Number(rawPrice);
@@ -59,7 +59,7 @@
       const updateTotal = () => {
         const qty = Number(qtyInput.value);
         set("#purchase-total", fixedPrice && Number.isInteger(qty) && qty >= minimum && qty <= stock
-          ? `Estimated total: JOD ${(qty * priceNumber).toLocaleString("en-JO", {minimumFractionDigits:2, maximumFractionDigits:2})}`
+          ? `Estimated total: JOD ${(qty * priceNumber).toLocaleString("en-JO", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
           : fixedPrice ? "Enter a valid quantity" : "Price on request");
       };
       qtyInput.addEventListener("input", updateTotal); updateTotal();
@@ -75,18 +75,18 @@
         if (type === "order" && !fixedPrice) { feedback("This listing requires a quotation.", true); return; }
         const now = new Date().toISOString();
         const common = {
-          id:id(), productId, productTitle:title, sellerId, sellerCompany:sellerName,
-          buyerId:user.id, buyerCompany:user.companyName || user.name || "Buyer",
-          quantity:qty, unit:product.unit || "units",
-          deliveryPreference:$("#purchase-delivery").value.trim(),
-          message:$("#purchase-notes").value.trim(), createdAt:now, updatedAt:now
+          id: id(), productId, productTitle: title, sellerId, sellerCompany: sellerName,
+          buyerId: user.id, buyerCompany: user.companyName || user.name || "Buyer",
+          quantity: qty, unit: product.unit || "units",
+          deliveryPreference: $("#purchase-delivery").value.trim(),
+          message: $("#purchase-notes").value.trim(), createdAt: now, updatedAt: now
         };
         const key = type === "quote" ? quoteKey() : orderKey;
         const previous = storage.getLocal(key, []);
         if (!Array.isArray(previous)) { feedback("Unable to read existing requests.", true); return; }
         const record = type === "quote"
-          ? {...common, status:"pending", quotation:null}
-          : {...common, status:"pending", unitPrice:priceNumber, totalPrice:Math.round(priceNumber * qty * 100) / 100};
+          ? { ...common, status: "pending", quotation: null }
+          : { ...common, status: "pending", unitPrice: priceNumber, totalPrice: Math.round(priceNumber * qty * 100) / 100 };
         if (!storage.setLocal(key, [...previous, record])) {
           feedback("Could not save request. Check browser storage.", true); return;
         }
@@ -99,5 +99,5 @@
     }
     $("#product-content").hidden = false;
   }
-  document.addEventListener("looply:layout-ready", render, {once:true});
+  document.addEventListener("looply:layout-ready", render, { once: true });
 })();
